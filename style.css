@@ -1,671 +1,744 @@
-/* ==========================================
-   GLOBAL
-========================================== */
+/* =========================================================
+   TRA CỨU KẾT QUẢ TRÚNG TUYỂN 2026
+   UMP - VNU
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
 }
 
 
-:root {
+/* =========================================================
+   FONT - ÉP TOÀN BỘ WEBSITE DÙNG SANS-SERIF
+   ========================================================= */
 
-    --ump-green: #00843D;
-
-    --ump-green-dark: #006B31;
-
-    --text: #333333;
-
-    --muted: #6B7280;
-
-    --border: #DDE4E8;
-
-    --background: #F4F7FB;
-
-    --white: #FFFFFF;
-
+html,
+body,
+div,
+span,
+label,
+input,
+button,
+p,
+a,
+section,
+main,
+header,
+footer {
+  font-family: Arial, Helvetica, sans-serif !important;
 }
 
 
-/* ==========================================
+/* =========================================================
    BODY
-========================================== */
-
-html {
-    min-height: 100%;
-}
-
+   ========================================================= */
 
 body {
+  background: #f3f6fa;
+  color: #1f2937;
 
-    min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif !important;
 
-    background: var(--background);
+  font-size: 16px;
+  font-weight: 400;
 
-    font-family:
-        "Be Vietnam Pro",
-        sans-serif;
+  min-height: 100vh;
 
-    color: var(--text);
-
-    font-size: 15px;
-
-    line-height: 1.6;
-
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
-/* ==========================================
-   PAGE
-========================================== */
-
-.page {
-
-    min-height: 100vh;
-
-    display: flex;
-
-    justify-content: center;
-
-    padding:
-        34px
-        16px
-        28px;
-
-}
-
-
-/* ==========================================
-   CONTAINER
-========================================== */
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
 
 .container {
+  width: 100%;
+  max-width: 760px;
 
-    width: 100%;
+  margin: 0 auto;
 
-    max-width: 760px;
-
-    margin: 0 auto;
-
+  padding: 24px 18px 50px;
 }
 
 
-/* ==========================================
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+  width: 100%;
+
+  text-align: center;
+
+  margin: 0 0 22px 0;
+}
+
+
+/* =========================================================
    LOGO
-========================================== */
-
-.logo-wrap {
-
-    text-align: center;
-
-    margin-bottom: 16px;
-
-}
-
+   ========================================================= */
 
 .logo {
+  display: block;
 
-    display: block;
+  width: auto;
+  max-width: 150px;
+  height: 82px;
 
-    width: auto;
+  object-fit: contain;
 
-    max-width: 230px;
-
-    max-height: 78px;
-
-    margin: 0 auto;
-
-    object-fit: contain;
-
+  margin: 0 auto 8px auto;
 }
 
 
-/* ==========================================
-   HERO
-========================================== */
+/* =========================================================
+   TITLE
+   LƯU Ý:
+   DÙNG DIV.title, KHÔNG DÙNG H1
+   ========================================================= */
 
-.hero {
+.title {
+  display: block;
 
-    text-align: center;
+  width: 100%;
 
-    margin-bottom: 24px;
+  margin: 0;
+  padding: 0;
 
+  color: #00843d;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+
+  font-size: 28px;
+
+  font-weight: 800;
+
+  font-style: normal;
+
+  line-height: 1.15;
+
+  letter-spacing: 0.2px;
+
+  text-align: center;
+
+  text-transform: uppercase;
+
+  /* tránh browser tự thay font */
+  font-variant: normal;
+
+  /* không dùng serif */
+  text-decoration: none;
 }
 
 
-.hero h1 {
-
-    color: var(--ump-green);
-
-    font-size: 29px;
-
-    line-height: 1.25;
-
-    font-weight: 800;
-
-    letter-spacing: -0.4px;
-
-}
-
+/* =========================================================
+   SUBTITLE
+   ========================================================= */
 
 .subtitle {
+  display: block;
 
-    margin-top: 10px;
+  margin-top: 10px;
 
-    color: var(--muted);
+  color: #718096;
 
-    font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif !important;
 
+  font-size: 15px;
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  line-height: 1.4;
+
+  text-align: center;
 }
 
 
-/* ==========================================
+/* =========================================================
    SEARCH CARD
-========================================== */
+   ========================================================= */
 
 .search-card {
+  width: 100%;
 
-    background: var(--white);
+  background: #ffffff;
 
-    border:
-        1px solid #E7EDF0;
+  border-radius: 18px;
 
-    border-radius: 18px;
+  padding: 26px;
 
-    padding: 24px;
+  margin: 0 0 20px 0;
 
-    box-shadow:
-        0 8px 28px
-        rgba(31, 41, 55, 0.07);
-
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.06);
 }
 
 
-.search-card label {
+/* =========================================================
+   LABEL
+   ========================================================= */
 
-    display: block;
+.label {
+  display: block;
 
-    margin-bottom: 8px;
+  margin: 0 0 9px 0;
 
-    font-size: 14px;
+  color: #374151;
 
-    font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif !important;
 
-    color: #374151;
+  font-size: 15px;
 
+  font-weight: 700;
+
+  font-style: normal;
+
+  line-height: 1.4;
 }
 
 
-/* ==========================================
+/* =========================================================
    INPUT
-========================================== */
+   ========================================================= */
 
-.input-wrap {
+.input {
+  display: block;
 
-    width: 100%;
+  width: 100%;
 
+  height: 50px;
+
+  margin: 0;
+
+  padding: 0 15px;
+
+  border: 1px solid #d8dee8;
+
+  border-radius: 12px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+
+  font-size: 16px;
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  line-height: 50px;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 
-.input-wrap input {
+/* INPUT PLACEHOLDER */
 
-    width: 100%;
+.input::placeholder {
+  color: #9ca3af;
 
-    height: 50px;
+  font-family: Arial, Helvetica, sans-serif !important;
 
-    padding:
-        0 15px;
+  font-size: 16px;
 
-    border:
-        1px solid var(--border);
+  font-weight: 400;
 
-    border-radius: 11px;
-
-    outline: none;
-
-    background: #FFFFFF;
-
-    color: var(--text);
-
-    font-family: inherit;
-
-    font-size: 15px;
-
-    transition:
-        0.2s ease;
-
+  opacity: 1;
 }
 
 
-.input-wrap input::placeholder {
+/* INPUT FOCUS */
 
-    color: #A0A8B0;
+.input:focus {
+  border-color: #00843d;
 
+  box-shadow:
+    0 0 0 3px rgba(0, 132, 61, 0.10);
 }
 
 
-.input-wrap input:focus {
+/* =========================================================
+   SEARCH BUTTON
+   ========================================================= */
 
-    border-color:
-        var(--ump-green);
+.button {
+  display: block;
 
-    box-shadow:
-        0 0 0 3px
-        rgba(0, 132, 61, 0.10);
+  width: 100%;
 
+  height: 50px;
+
+  margin: 14px 0 0 0;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 11px;
+
+  outline: none;
+
+  background: #00843d;
+
+  color: #ffffff;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  font-style: normal;
+
+  line-height: 50px;
+
+  text-align: center;
+
+  cursor: pointer;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
 }
 
 
-/* ==========================================
-   BUTTON
-========================================== */
+/* BUTTON HOVER */
 
-.search-card button {
-
-    width: 100%;
-
-    height: 50px;
-
-    margin-top: 14px;
-
-    border: none;
-
-    border-radius: 11px;
-
-    background:
-        var(--ump-green);
-
-    color: #FFFFFF;
-
-    font-family: inherit;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    cursor: pointer;
-
-    transition:
-        0.2s ease;
-
+.button:hover {
+  background: #006f34;
 }
 
 
-.search-card button:hover {
+/* BUTTON ACTIVE */
 
-    background:
-        var(--ump-green-dark);
-
+.button:active {
+  transform: scale(0.99);
 }
 
 
-.search-card button:active {
+/* BUTTON DISABLED */
 
-    transform:
-        translateY(1px);
+.button:disabled {
+  background: #9bbdaa;
 
+  cursor: not-allowed;
+
+  transform: none;
 }
 
 
-.search-card button:disabled {
+/* =========================================================
+   NOTE
+   ========================================================= */
 
-    opacity: 0.65;
+.note {
+  display: block;
 
-    cursor: wait;
+  margin-top: 11px;
 
+  color: #8a94a6;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+
+  font-size: 13px;
+
+  font-weight: 400;
+
+  font-style: normal;
+
+  line-height: 1.4;
+
+  text-align: center;
 }
 
 
-/* ==========================================
-   HINT
-========================================== */
+/* =========================================================
+   LOADING
+   ========================================================= */
 
-.hint {
+.loading {
+  display: none;
 
-    margin-top: 9px;
+  margin-top: 12px;
 
-    text-align: center;
+  color: #00843d;
 
-    color: #8A929A;
+  font-family: Arial, Helvetica, sans-serif !important;
 
-    font-size: 12px;
+  font-size: 14px;
 
+  font-weight: 600;
+
+  font-style: normal;
+
+  line-height: 1.4;
+
+  text-align: center;
 }
 
 
-/* ==========================================
-   MESSAGE
-========================================== */
+/* =========================================================
+   ERROR
+   ========================================================= */
 
-.message {
+.error {
+  display: none;
 
-    margin-top: 16px;
+  margin-top: 14px;
 
-    padding:
-        13px
-        15px;
+  padding: 12px 15px;
 
-    border-radius: 12px;
+  border-radius: 10px;
 
-    text-align: center;
+  background: #fff1f2;
 
-    font-size: 13px;
+  color: #be123c;
 
-    font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif !important;
 
+  font-size: 14px;
+
+  font-weight: 500;
+
+  font-style: normal;
+
+  line-height: 1.4;
+
+  text-align: center;
 }
 
 
-.message.error {
-
-    background: #FEF3F2;
-
-    color: #B42318;
-
-    border:
-        1px solid #FECACA;
-
-}
-
-
-/* ==========================================
+/* =========================================================
    RESULT CARD
-========================================== */
+   ========================================================= */
 
 .result-card {
+  display: none;
 
-    margin-top: 18px;
+  width: 100%;
 
-    background: var(--white);
+  background: #ffffff;
 
-    border-radius: 18px;
+  border-top: 4px solid #00843d;
 
-    padding:
-        26px
-        24px;
+  border-radius: 18px;
 
-    border:
-        1px solid #E7EDF0;
+  padding: 28px 24px;
 
-    box-shadow:
-        0 8px 28px
-        rgba(31, 41, 55, 0.07);
+  margin: 0;
 
-    text-align: center;
-
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.06);
 }
 
 
-.result-pass {
+/* =========================================================
+   SUCCESS ICON
+   ========================================================= */
 
-    border-top:
-        4px solid
-        var(--ump-green);
+.success-icon {
+  width: 52px;
+  height: 52px;
 
+  margin: 0 auto 10px auto;
+
+  border-radius: 50%;
+
+  background: #dcfce7;
+
+  color: #00843d;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+
+  font-size: 30px;
+
+  font-weight: 700;
+
+  font-style: normal;
+
+  line-height: 1;
+
+  text-align: center;
 }
 
 
-/* ==========================================
-   RESULT ICON
-========================================== */
+/* =========================================================
+   SUCCESS TITLE
+   ========================================================= */
 
-.result-icon {
+.success-title {
+  display: block;
 
-    width: 52px;
+  margin: 0;
 
-    height: 52px;
+  padding: 0;
 
-    margin:
-        0 auto
-        12px;
+  color: #00843d;
 
-    border-radius: 50%;
+  font-family: Arial, Helvetica, sans-serif !important;
 
-    display: flex;
+  font-size: 24px;
 
-    align-items: center;
+  font-weight: 800;
 
-    justify-content: center;
+  font-style: normal;
 
-    background: #DCFCE7;
+  line-height: 1.2;
 
-    color:
-        var(--ump-green);
-
-    font-size: 28px;
-
-    font-weight: 800;
-
+  text-align: center;
 }
 
 
-/* ==========================================
-   RESULT TITLE
-========================================== */
+/* =========================================================
+   SUCCESS SUBTITLE
+   ========================================================= */
 
-.result-title {
+.success-subtitle {
+  display: block;
 
-    color:
-        var(--ump-green);
+  margin: 7px 0 22px 0;
 
-    font-size: 22px;
+  color: #718096;
 
-    line-height: 1.3;
+  font-family: Arial, Helvetica, sans-serif !important;
 
-    font-weight: 800;
+  font-size: 14px;
 
+  font-weight: 400;
+
+  font-style: normal;
+
+  line-height: 1.4;
+
+  text-align: center;
 }
 
 
-.result-description {
+/* =========================================================
+   INFORMATION ROW
+   ========================================================= */
 
-    margin-top: 5px;
+.info-row {
+  display: grid;
 
-    color: var(--muted);
+  grid-template-columns:
+    180px
+    minmax(0, 1fr);
 
-    font-size: 13px;
+  width: 100%;
 
+  min-height: 49px;
+
+  margin: 0;
+  padding: 0;
+
+  border-top:
+    1px solid #e5e7eb;
+
+  align-items: center;
+
+  column-gap: 10px;
 }
 
 
-/* ==========================================
-   STUDENT INFORMATION
-========================================== */
-
-.student-info {
-
-    margin-top: 22px;
-
-    border-top:
-        1px solid #EDF1F3;
-
-    text-align: left;
-
-}
-
-
-.info-row,
-.status-row {
-
-    display: grid;
-
-    grid-template-columns:
-        190px
-        1fr;
-
-    gap: 18px;
-
-    padding:
-        13px 0;
-
-    border-bottom:
-        1px solid #EDF1F3;
-
-}
-
+/* =========================================================
+   INFORMATION LABEL
+   ========================================================= */
 
 .info-label {
+  color: #718096;
 
-    color: #6B7280;
+  font-family: Arial, Helvetica, sans-serif !important;
 
-    font-size: 13px;
+  font-size: 14px;
 
-    font-weight: 600;
+  font-weight: 500;
 
+  font-style: normal;
+
+  line-height: 1.4;
 }
 
+
+/* =========================================================
+   INFORMATION VALUE
+   ========================================================= */
 
 .info-value {
+  min-width: 0;
 
-    color: #222222;
+  color: #111827;
 
-    font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif !important;
 
-    font-weight: 700;
+  font-size: 15px;
 
+  font-weight: 700;
+
+  font-style: normal;
+
+  line-height: 1.4;
+
+  word-break: break-word;
 }
 
 
-.status-row {
+/* =========================================================
+   STATUS
+   ========================================================= */
 
-    border-bottom: none;
+.status {
+  display: inline-flex;
 
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 7px 13px;
+
+  border-radius: 20px;
+
+  background: #dcfce7;
+
+  color: #087f3b;
+
+  font-family: Arial, Helvetica, sans-serif !important;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  font-style: normal;
+
+  line-height: 1;
 }
 
 
-.status-badge {
-
-    display: inline-flex;
-
-    width: fit-content;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding:
-        5px
-        11px;
-
-    border-radius: 999px;
-
-    background: #DCFCE7;
-
-    color: #166534;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-}
-
-
-/* ==========================================
-   FOOTER
-========================================== */
-
-footer {
-
-    padding:
-        22px 0 0;
-
-    text-align: center;
-
-    color: #8A929A;
-
-    font-size: 11px;
-
-}
-
-
-/* ==========================================
+/* =========================================================
    MOBILE
-========================================== */
+   ========================================================= */
 
-@media (max-width: 600px) {
+@media screen and (max-width: 600px) {
 
-
-    .page {
-
-        padding:
-            24px
-            12px
-            22px;
-
-    }
+  .container {
+    padding:
+      20px 12px 40px;
+  }
 
 
-    .logo {
+  .logo {
+    height: 70px;
+    max-width: 130px;
 
-        max-width: 190px;
-
-        max-height: 65px;
-
-    }
-
-
-    .hero h1 {
-
-        font-size: 24px;
-
-    }
+    margin-bottom: 7px;
+  }
 
 
-    .subtitle {
-
-        font-size: 13px;
-
-    }
-
-
-    .search-card {
-
-        padding:
-            20px
-            16px;
-
-        border-radius: 15px;
-
-    }
+  .title {
+    font-size: 23px;
+    line-height: 1.15;
+  }
 
 
-    .result-card {
-
-        padding:
-            23px
-            16px;
-
-        border-radius: 15px;
-
-    }
+  .subtitle {
+    font-size: 14px;
+  }
 
 
-    .result-title {
+  .search-card {
+    padding:
+      20px 16px;
 
-        font-size: 20px;
-
-    }
-
-
-    .info-row,
-    .status-row {
-
-        grid-template-columns:
-            1fr;
-
-        gap: 3px;
-
-        padding:
-            11px 0;
-
-    }
+    border-radius: 16px;
+  }
 
 
-    .status-row {
+  .result-card {
+    padding:
+      23px 16px;
 
-        gap: 7px;
+    border-radius: 16px;
+  }
 
-    }
+
+  .info-row {
+    grid-template-columns:
+      135px
+      minmax(0, 1fr);
+
+    column-gap: 8px;
+  }
+
+
+  .info-label {
+    font-size: 13px;
+  }
+
+
+  .info-value {
+    font-size: 14px;
+  }
+
+
+  .success-title {
+    font-size: 22px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 390px) {
+
+  .title {
+    font-size: 21px;
+  }
+
+
+  .info-row {
+    grid-template-columns:
+      120px
+      minmax(0, 1fr);
+  }
 
 }
