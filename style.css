@@ -1,0 +1,671 @@
+/* ==========================================
+   GLOBAL
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+
+    --ump-green: #00843D;
+
+    --ump-green-dark: #006B31;
+
+    --text: #333333;
+
+    --muted: #6B7280;
+
+    --border: #DDE4E8;
+
+    --background: #F4F7FB;
+
+    --white: #FFFFFF;
+
+}
+
+
+/* ==========================================
+   BODY
+========================================== */
+
+html {
+    min-height: 100%;
+}
+
+
+body {
+
+    min-height: 100vh;
+
+    background: var(--background);
+
+    font-family:
+        "Be Vietnam Pro",
+        sans-serif;
+
+    color: var(--text);
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+}
+
+
+/* ==========================================
+   PAGE
+========================================== */
+
+.page {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    padding:
+        34px
+        16px
+        28px;
+
+}
+
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container {
+
+    width: 100%;
+
+    max-width: 760px;
+
+    margin: 0 auto;
+
+}
+
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.logo-wrap {
+
+    text-align: center;
+
+    margin-bottom: 16px;
+
+}
+
+
+.logo {
+
+    display: block;
+
+    width: auto;
+
+    max-width: 230px;
+
+    max-height: 78px;
+
+    margin: 0 auto;
+
+    object-fit: contain;
+
+}
+
+
+/* ==========================================
+   HERO
+========================================== */
+
+.hero {
+
+    text-align: center;
+
+    margin-bottom: 24px;
+
+}
+
+
+.hero h1 {
+
+    color: var(--ump-green);
+
+    font-size: 29px;
+
+    line-height: 1.25;
+
+    font-weight: 800;
+
+    letter-spacing: -0.4px;
+
+}
+
+
+.subtitle {
+
+    margin-top: 10px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+
+}
+
+
+/* ==========================================
+   SEARCH CARD
+========================================== */
+
+.search-card {
+
+    background: var(--white);
+
+    border:
+        1px solid #E7EDF0;
+
+    border-radius: 18px;
+
+    padding: 24px;
+
+    box-shadow:
+        0 8px 28px
+        rgba(31, 41, 55, 0.07);
+
+}
+
+
+.search-card label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    color: #374151;
+
+}
+
+
+/* ==========================================
+   INPUT
+========================================== */
+
+.input-wrap {
+
+    width: 100%;
+
+}
+
+
+.input-wrap input {
+
+    width: 100%;
+
+    height: 50px;
+
+    padding:
+        0 15px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background: #FFFFFF;
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    transition:
+        0.2s ease;
+
+}
+
+
+.input-wrap input::placeholder {
+
+    color: #A0A8B0;
+
+}
+
+
+.input-wrap input:focus {
+
+    border-color:
+        var(--ump-green);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(0, 132, 61, 0.10);
+
+}
+
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.search-card button {
+
+    width: 100%;
+
+    height: 50px;
+
+    margin-top: 14px;
+
+    border: none;
+
+    border-radius: 11px;
+
+    background:
+        var(--ump-green);
+
+    color: #FFFFFF;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        0.2s ease;
+
+}
+
+
+.search-card button:hover {
+
+    background:
+        var(--ump-green-dark);
+
+}
+
+
+.search-card button:active {
+
+    transform:
+        translateY(1px);
+
+}
+
+
+.search-card button:disabled {
+
+    opacity: 0.65;
+
+    cursor: wait;
+
+}
+
+
+/* ==========================================
+   HINT
+========================================== */
+
+.hint {
+
+    margin-top: 9px;
+
+    text-align: center;
+
+    color: #8A929A;
+
+    font-size: 12px;
+
+}
+
+
+/* ==========================================
+   MESSAGE
+========================================== */
+
+.message {
+
+    margin-top: 16px;
+
+    padding:
+        13px
+        15px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+}
+
+
+.message.error {
+
+    background: #FEF3F2;
+
+    color: #B42318;
+
+    border:
+        1px solid #FECACA;
+
+}
+
+
+/* ==========================================
+   RESULT CARD
+========================================== */
+
+.result-card {
+
+    margin-top: 18px;
+
+    background: var(--white);
+
+    border-radius: 18px;
+
+    padding:
+        26px
+        24px;
+
+    border:
+        1px solid #E7EDF0;
+
+    box-shadow:
+        0 8px 28px
+        rgba(31, 41, 55, 0.07);
+
+    text-align: center;
+
+}
+
+
+.result-pass {
+
+    border-top:
+        4px solid
+        var(--ump-green);
+
+}
+
+
+/* ==========================================
+   RESULT ICON
+========================================== */
+
+.result-icon {
+
+    width: 52px;
+
+    height: 52px;
+
+    margin:
+        0 auto
+        12px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #DCFCE7;
+
+    color:
+        var(--ump-green);
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+}
+
+
+/* ==========================================
+   RESULT TITLE
+========================================== */
+
+.result-title {
+
+    color:
+        var(--ump-green);
+
+    font-size: 22px;
+
+    line-height: 1.3;
+
+    font-weight: 800;
+
+}
+
+
+.result-description {
+
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+}
+
+
+/* ==========================================
+   STUDENT INFO
+========================================== */
+
+.student-info {
+
+    margin-top: 22px;
+
+    border-top:
+        1px solid #EDF1F3;
+
+    text-align: left;
+
+}
+
+
+.info-row,
+.status-row {
+
+    display: grid;
+
+    grid-template-columns:
+        170px
+        1fr;
+
+    gap: 18px;
+
+    padding:
+        13px 0;
+
+    border-bottom:
+        1px solid #EDF1F3;
+
+}
+
+
+.info-label {
+
+    color: #6B7280;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.info-value {
+
+    color: #222222;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+}
+
+
+.status-row {
+
+    border-bottom: none;
+
+}
+
+
+.status-badge {
+
+    display: inline-flex;
+
+    width: fit-content;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        5px
+        11px;
+
+    border-radius: 999px;
+
+    background: #DCFCE7;
+
+    color: #166534;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer {
+
+    padding:
+        22px 0 0;
+
+    text-align: center;
+
+    color: #8A929A;
+
+    font-size: 11px;
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+
+    .page {
+
+        padding:
+            24px
+            12px
+            22px;
+
+    }
+
+
+    .logo {
+
+        max-width: 190px;
+
+        max-height: 65px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 24px;
+
+    }
+
+
+    .subtitle {
+
+        font-size: 13px;
+
+    }
+
+
+    .search-card {
+
+        padding:
+            20px
+            16px;
+
+        border-radius: 15px;
+
+    }
+
+
+    .result-card {
+
+        padding:
+            23px
+            16px;
+
+        border-radius: 15px;
+
+    }
+
+
+    .result-title {
+
+        font-size: 20px;
+
+    }
+
+
+    .info-row,
+    .status-row {
+
+        grid-template-columns:
+            1fr;
+
+        gap: 3px;
+
+        padding:
+            11px 0;
+
+    }
+
+
+    .status-row {
+
+        gap: 7px;
+
+    }
+
+}

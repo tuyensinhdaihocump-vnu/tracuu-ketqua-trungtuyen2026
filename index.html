@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Tra cứu kết quả trúng tuyển</title>
+
+
+    <!-- Google Font -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<div class="page">
+
+
+    <main class="container">
+
+
+        <!-- ==========================================
+             LOGO
+        =========================================== -->
+
+        <div class="logo-wrap">
+
+            <img
+                src="logo.png"
+                alt="Trường Đại học Y Dược - Đại học Quốc gia Hà Nội"
+                class="logo"
+            >
+
+        </div>
+
+
+
+        <!-- ==========================================
+             HEADER
+        =========================================== -->
+
+        <section class="hero">
+
+            <h1>
+                TRA CỨU KẾT QUẢ<br>
+                TRÚNG TUYỂN
+            </h1>
+
+
+            <p class="subtitle">
+                Nhập số CCCD để tra cứu kết quả trúng tuyển.
+            </p>
+
+        </section>
+
+
+
+        <!-- ==========================================
+             SEARCH CARD
+        =========================================== -->
+
+        <section class="search-card">
+
+
+            <label for="cccd">
+
+                Số CCCD
+
+            </label>
+
+
+            <div class="input-wrap">
+
+                <input
+                    type="text"
+                    id="cccd"
+                    inputmode="numeric"
+                    maxlength="12"
+                    autocomplete="off"
+                    placeholder="Nhập số CCCD"
+                    aria-label="Số CCCD"
+                >
+
+            </div>
+
+
+
+            <button
+                id="searchBtn"
+                type="button"
+            >
+
+                <span id="buttonText">
+
+                    TRA CỨU KẾT QUẢ
+
+                </span>
+
+
+                <span
+                    id="buttonLoading"
+                    hidden
+                >
+
+                    ĐANG TRA CỨU...
+
+                </span>
+
+            </button>
+
+
+            <p class="hint">
+
+                Vui lòng nhập đúng 12 số CCCD.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- ==========================================
+             MESSAGE
+        =========================================== -->
+
+        <div
+            id="message"
+            class="message"
+            role="alert"
+            hidden
+        ></div>
+
+
+
+        <!-- ==========================================
+             RESULT
+        =========================================== -->
+
+        <section
+            id="resultCard"
+            class="result-card result-pass"
+            hidden
+        >
+
+
+            <!-- ICON -->
+
+            <div
+                id="resultIcon"
+                class="result-icon"
+            >
+
+                ✓
+
+            </div>
+
+
+
+            <!-- TITLE -->
+
+            <div
+                id="resultTitle"
+                class="result-title"
+            >
+
+                CHÚC MỪNG!
+
+            </div>
+
+
+
+            <!-- DESCRIPTION -->
+
+            <div
+                id="resultDescription"
+                class="result-description"
+            >
+
+                Thí sinh đã trúng tuyển.
+
+            </div>
+
+
+
+            <!-- STUDENT INFORMATION -->
+
+            <div class="student-info">
+
+
+                <!-- HỌ TÊN -->
+
+                <div class="info-row">
+
+                    <div class="info-label">
+
+                        Họ và tên
+
+                    </div>
+
+
+                    <div
+                        id="studentName"
+                        class="info-value"
+                    ></div>
+
+                </div>
+
+
+
+                <!-- NGÀY SINH -->
+
+                <div class="info-row">
+
+                    <div class="info-label">
+
+                        Ngày sinh
+
+                    </div>
+
+
+                    <div
+                        id="studentDob"
+                        class="info-value"
+                    ></div>
+
+                </div>
+
+
+
+                <!-- NGÀNH -->
+
+                <div class="info-row">
+
+                    <div class="info-label">
+
+                        Ngành trúng tuyển
+
+                    </div>
+
+
+                    <div
+                        id="studentMajor"
+                        class="info-value"
+                    ></div>
+
+                </div>
+
+
+
+                <!-- TRẠNG THÁI -->
+
+                <div class="status-row">
+
+                    <div class="info-label">
+
+                        Trạng thái
+
+                    </div>
+
+
+                    <div
+                        id="studentStatus"
+                        class="status-badge"
+                    >
+
+                        TRÚNG TUYỂN
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ==========================================
+             FOOTER
+        =========================================== -->
+
+        <footer>
+
+            Trường Đại học Y Dược – Đại học Quốc gia Hà Nội
+
+        </footer>
+
+
+    </main>
+
+
+</div>
+
+
+
+<!-- ==========================================
+     JAVASCRIPT
+=========================================== -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
