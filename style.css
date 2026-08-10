@@ -1,6 +1,6 @@
 /* =========================================================
-   TRA CỨU KẾT QUẢ TRÚNG TUYỂN 2026
-   UMP - VNU
+   UMP - TRA CỨU KẾT QUẢ TRÚNG TUYỂN 2026
+   STYLE.CSS
    ========================================================= */
 
 
@@ -12,50 +12,31 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
   margin: 0;
   padding: 0;
   width: 100%;
   min-height: 100%;
 }
 
-
-/* =========================================================
-   FONT - ÉP TOÀN BỘ WEBSITE DÙNG SANS-SERIF
-   ========================================================= */
-
-html,
-body,
-div,
-span,
-label,
-input,
-button,
-p,
-a,
-section,
-main,
-header,
-footer {
-  font-family: Arial, Helvetica, sans-serif !important;
-}
-
-
-/* =========================================================
-   BODY
-   ========================================================= */
-
 body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+
   background: #f3f6fa;
   color: #1f2937;
 
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family:
+    "Segoe UI",
+    Arial,
+    Helvetica,
+    sans-serif !important;
 
   font-size: 16px;
   font-weight: 400;
-
-  min-height: 100vh;
+  font-style: normal;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -63,10 +44,10 @@ body {
 
 
 /* =========================================================
-   MAIN CONTAINER
+   CONTAINER
    ========================================================= */
 
-.container {
+.page-container {
   width: 100%;
   max-width: 760px;
 
@@ -80,12 +61,13 @@ body {
    HEADER
    ========================================================= */
 
-.header {
+.page-header {
   width: 100%;
 
-  text-align: center;
-
   margin: 0 0 22px 0;
+  padding: 0;
+
+  text-align: center;
 }
 
 
@@ -93,56 +75,81 @@ body {
    LOGO
    ========================================================= */
 
-.logo {
+.ump-logo {
   display: block;
 
   width: auto;
   max-width: 150px;
   height: 82px;
 
-  object-fit: contain;
-
   margin: 0 auto 8px auto;
+  padding: 0;
+
+  object-fit: contain;
 }
 
 
 /* =========================================================
-   TITLE
-   LƯU Ý:
-   DÙNG DIV.title, KHÔNG DÙNG H1
+   MAIN HEADING
+
+   IMPORTANT:
+   Không dùng h1.
+   Không dùng class title.
    ========================================================= */
 
-.title {
+.main-heading {
   display: block;
 
   width: 100%;
 
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
 
-  color: #00843d;
+  color: #00843d !important;
 
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family:
+    "Arial",
+    "Helvetica",
+    sans-serif !important;
 
-  font-size: 28px;
+  font-size: 28px !important;
 
-  font-weight: 800;
+  font-weight: 800 !important;
 
-  font-style: normal;
+  font-style: normal !important;
 
-  line-height: 1.15;
+  font-variant: normal !important;
 
-  letter-spacing: 0.2px;
+  line-height: 1.15 !important;
 
-  text-align: center;
+  letter-spacing: 0.2px !important;
 
-  text-transform: uppercase;
+  text-align: center !important;
 
-  /* tránh browser tự thay font */
-  font-variant: normal;
+  text-transform: uppercase !important;
 
-  /* không dùng serif */
-  text-decoration: none;
+  text-decoration: none !important;
+
+  text-shadow: none !important;
+}
+
+
+/*
+   ÉP CÁC PHẦN TỬ BÊN TRONG MAIN HEADING
+*/
+
+.main-heading,
+.main-heading * {
+  font-family:
+    "Arial",
+    "Helvetica",
+    sans-serif !important;
+
+  font-style: normal !important;
+
+  font-variant: normal !important;
+
+  text-shadow: none !important;
 }
 
 
@@ -150,14 +157,18 @@ body {
    SUBTITLE
    ========================================================= */
 
-.subtitle {
+.page-subtitle {
   display: block;
 
-  margin-top: 10px;
+  margin: 10px 0 0 0;
+  padding: 0;
 
   color: #718096;
 
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family:
+    "Arial",
+    "Helvetica",
+    sans-serif !important;
 
   font-size: 15px;
 
@@ -178,13 +189,12 @@ body {
 .search-card {
   width: 100%;
 
+  margin: 0 0 20px 0;
+  padding: 26px;
+
   background: #ffffff;
 
   border-radius: 18px;
-
-  padding: 26px;
-
-  margin: 0 0 20px 0;
 
   box-shadow:
     0 8px 25px rgba(0, 0, 0, 0.06);
@@ -192,17 +202,21 @@ body {
 
 
 /* =========================================================
-   LABEL
+   FORM LABEL
    ========================================================= */
 
-.label {
+.cccd-label {
   display: block;
 
   margin: 0 0 9px 0;
+  padding: 0;
 
   color: #374151;
 
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family:
+    "Arial",
+    "Helvetica",
+    sans-serif !important;
 
   font-size: 15px;
 
@@ -215,21 +229,20 @@ body {
 
 
 /* =========================================================
-   INPUT
+   CCCD INPUT
    ========================================================= */
 
-.input {
+.cccd-input {
   display: block;
 
   width: 100%;
-
   height: 50px;
 
   margin: 0;
-
   padding: 0 15px;
 
-  border: 1px solid #d8dee8;
+  border:
+    1px solid #d8dee8;
 
   border-radius: 12px;
 
@@ -239,7 +252,10 @@ body {
 
   color: #111827;
 
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family:
+    "Arial",
+    "Helvetica",
+    sans-serif !important;
 
   font-size: 16px;
 
@@ -250,7 +266,6 @@ body {
   line-height: 50px;
 
   appearance: none;
-
   -webkit-appearance: none;
 
   transition:
@@ -261,10 +276,13 @@ body {
 
 /* INPUT PLACEHOLDER */
 
-.input::placeholder {
+.cccd-input::placeholder {
   color: #9ca3af;
 
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family:
+    "Arial",
+    "Helvetica",
+    sans-serif !important;
 
   font-size: 16px;
 
@@ -276,7 +294,7 @@ body {
 
 /* INPUT FOCUS */
 
-.input:focus {
+.cccd-input:focus {
   border-color: #00843d;
 
   box-shadow:
@@ -288,15 +306,13 @@ body {
    SEARCH BUTTON
    ========================================================= */
 
-.button {
+.search-button {
   display: block;
 
   width: 100%;
-
   height: 50px;
 
   margin: 14px 0 0 0;
-
   padding: 0;
 
   border: none;
@@ -309,7 +325,10 @@ body {
 
   color: #ffffff;
 
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family:
+    "Arial",
+    "Helvetica",
+    sans-serif !important;
 
   font-size: 15px;
 
@@ -324,7 +343,6 @@ body {
   cursor: pointer;
 
   appearance: none;
-
   -webkit-appearance: none;
 
   transition:
@@ -335,21 +353,21 @@ body {
 
 /* BUTTON HOVER */
 
-.button:hover {
+.search-button:hover {
   background: #006f34;
 }
 
 
 /* BUTTON ACTIVE */
 
-.button:active {
+.search-button:active {
   transform: scale(0.99);
 }
 
 
 /* BUTTON DISABLED */
 
-.button:disabled {
+.search-button:disabled {
   background: #9bbdaa;
 
   cursor: not-allowed;
@@ -362,14 +380,18 @@ body {
    NOTE
    ========================================================= */
 
-.note {
+.input-note {
   display: block;
 
-  margin-top: 11px;
+  margin: 11px 0 0 0;
+  padding: 0;
 
   color: #8a94a6;
 
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family:
+    "Arial",
+    "Helvetica",
+    sans-serif !important;
 
   font-size: 13px;
 
@@ -387,22 +409,22 @@ body {
    LOADING
    ========================================================= */
 
-.loading {
+.loading-message {
   display: none;
 
-  margin-top: 12px;
+  margin: 12px 0 0 0;
+  padding: 0;
 
   color: #00843d;
 
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family:
+    "Arial",
+    "Helvetica",
+    sans-serif !important;
 
   font-size: 14px;
 
   font-weight: 600;
-
-  font-style: normal;
-
-  line-height: 1.4;
 
   text-align: center;
 }
@@ -412,11 +434,10 @@ body {
    ERROR
    ========================================================= */
 
-.error {
+.error-message {
   display: none;
 
-  margin-top: 14px;
-
+  margin: 14px 0 0 0;
   padding: 12px 15px;
 
   border-radius: 10px;
@@ -425,13 +446,14 @@ body {
 
   color: #be123c;
 
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family:
+    "Arial",
+    "Helvetica",
+    sans-serif !important;
 
   font-size: 14px;
 
   font-weight: 500;
-
-  font-style: normal;
 
   line-height: 1.4;
 
@@ -448,15 +470,15 @@ body {
 
   width: 100%;
 
-  background: #ffffff;
-
-  border-top: 4px solid #00843d;
-
-  border-radius: 18px;
-
+  margin: 0;
   padding: 28px 24px;
 
-  margin: 0;
+  background: #ffffff;
+
+  border-top:
+    4px solid #00843d;
+
+  border-radius: 18px;
 
   box-shadow:
     0 8px 25px rgba(0, 0, 0, 0.06);
@@ -468,10 +490,16 @@ body {
    ========================================================= */
 
 .success-icon {
+  display: flex;
+
   width: 52px;
   height: 52px;
 
   margin: 0 auto 10px auto;
+  padding: 0;
+
+  align-items: center;
+  justify-content: center;
 
   border-radius: 50%;
 
@@ -479,13 +507,10 @@ body {
 
   color: #00843d;
 
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family:
+    "Arial",
+    "Helvetica",
+    sans-serif !important;
 
   font-size: 30px;
 
@@ -494,25 +519,25 @@ body {
   font-style: normal;
 
   line-height: 1;
-
-  text-align: center;
 }
 
 
 /* =========================================================
-   SUCCESS TITLE
+   RESULT TITLE
    ========================================================= */
 
-.success-title {
+.result-heading {
   display: block;
 
   margin: 0;
-
   padding: 0;
 
   color: #00843d;
 
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family:
+    "Arial",
+    "Helvetica",
+    sans-serif !important;
 
   font-size: 24px;
 
@@ -527,23 +552,25 @@ body {
 
 
 /* =========================================================
-   SUCCESS SUBTITLE
+   RESULT SUBTITLE
    ========================================================= */
 
-.success-subtitle {
+.result-subheading {
   display: block;
 
   margin: 7px 0 22px 0;
+  padding: 0;
 
   color: #718096;
 
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family:
+    "Arial",
+    "Helvetica",
+    sans-serif !important;
 
   font-size: 14px;
 
   font-weight: 400;
-
-  font-style: normal;
 
   line-height: 1.4;
 
@@ -555,7 +582,7 @@ body {
    INFORMATION ROW
    ========================================================= */
 
-.info-row {
+.student-info-row {
   display: grid;
 
   grid-template-columns:
@@ -582,10 +609,13 @@ body {
    INFORMATION LABEL
    ========================================================= */
 
-.info-label {
+.student-info-label {
   color: #718096;
 
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family:
+    "Arial",
+    "Helvetica",
+    sans-serif !important;
 
   font-size: 14px;
 
@@ -601,12 +631,15 @@ body {
    INFORMATION VALUE
    ========================================================= */
 
-.info-value {
+.student-info-value {
   min-width: 0;
 
   color: #111827;
 
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family:
+    "Arial",
+    "Helvetica",
+    sans-serif !important;
 
   font-size: 15px;
 
@@ -624,11 +657,10 @@ body {
    STATUS
    ========================================================= */
 
-.status {
+.student-status {
   display: inline-flex;
 
   align-items: center;
-
   justify-content: center;
 
   padding: 7px 13px;
@@ -639,7 +671,10 @@ body {
 
   color: #087f3b;
 
-  font-family: Arial, Helvetica, sans-serif !important;
+  font-family:
+    "Arial",
+    "Helvetica",
+    sans-serif !important;
 
   font-size: 13px;
 
@@ -657,13 +692,13 @@ body {
 
 @media screen and (max-width: 600px) {
 
-  .container {
+  .page-container {
     padding:
       20px 12px 40px;
   }
 
 
-  .logo {
+  .ump-logo {
     height: 70px;
     max-width: 130px;
 
@@ -671,13 +706,13 @@ body {
   }
 
 
-  .title {
-    font-size: 23px;
-    line-height: 1.15;
+  .main-heading {
+    font-size: 23px !important;
+    line-height: 1.15 !important;
   }
 
 
-  .subtitle {
+  .page-subtitle {
     font-size: 14px;
   }
 
@@ -698,7 +733,7 @@ body {
   }
 
 
-  .info-row {
+  .student-info-row {
     grid-template-columns:
       135px
       minmax(0, 1fr);
@@ -707,17 +742,17 @@ body {
   }
 
 
-  .info-label {
+  .student-info-label {
     font-size: 13px;
   }
 
 
-  .info-value {
+  .student-info-value {
     font-size: 14px;
   }
 
 
-  .success-title {
+  .result-heading {
     font-size: 22px;
   }
 
@@ -725,17 +760,17 @@ body {
 
 
 /* =========================================================
-   VERY SMALL MOBILE
+   VERY SMALL SCREEN
    ========================================================= */
 
 @media screen and (max-width: 390px) {
 
-  .title {
-    font-size: 21px;
+  .main-heading {
+    font-size: 21px !important;
   }
 
 
-  .info-row {
+  .student-info-row {
     grid-template-columns:
       120px
       minmax(0, 1fr);
