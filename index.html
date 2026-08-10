@@ -20,52 +20,14 @@
   </title>
 
 
-  <!-- CSS -->
+  <!-- =====================================================
+       CSS
+       ===================================================== -->
 
   <link
     rel="stylesheet"
     href="style.css"
   >
-
-
-  <!--
-    =====================================================
-    CRITICAL FONT STYLE
-
-    Phần này giúp đảm bảo title không bị chuyển
-    sang Times New Roman / Georgia.
-    =====================================================
-  -->
-
-  <style>
-
-    html,
-    body,
-    div,
-    span,
-    label,
-    input,
-    button,
-    p {
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif !important;
-    }
-
-
-    .main-heading {
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif !important;
-
-      font-style: normal !important;
-
-      font-weight: 800 !important;
-    }
-
-  </style>
 
 </head>
 
@@ -73,16 +35,16 @@
 <body>
 
 
-  <!-- =================================================
-       PAGE
-       ================================================= -->
+  <!-- =====================================================
+       MAIN PAGE
+       ===================================================== -->
 
   <div class="page-container">
 
 
-    <!-- =================================================
+    <!-- ===================================================
          HEADER
-         ================================================= -->
+         =================================================== -->
 
     <header class="page-header">
 
@@ -97,11 +59,7 @@
       >
 
 
-      <!--
-        IMPORTANT:
-        Đây là DIV, không phải H1.
-        Không dùng class "title".
-      -->
+      <!-- MAIN HEADING -->
 
       <div class="main-heading">
 
@@ -125,9 +83,9 @@
 
 
 
-    <!-- =================================================
+    <!-- ===================================================
          SEARCH CARD
-         ================================================= -->
+         =================================================== -->
 
     <section class="search-card">
 
@@ -203,9 +161,9 @@
 
 
 
-    <!-- =================================================
-         RESULT CARD
-         ================================================= -->
+    <!-- ===================================================
+         RESULT
+         =================================================== -->
 
     <section
       id="resultCard"
@@ -253,6 +211,7 @@
 
         </div>
 
+
         <div
           id="studentName"
           class="student-info-value"
@@ -273,6 +232,7 @@
           Số báo danh
 
         </div>
+
 
         <div
           id="studentSBD"
@@ -295,6 +255,7 @@
 
         </div>
 
+
         <div
           id="studentDOB"
           class="student-info-value"
@@ -315,6 +276,7 @@
           Ngành trúng tuyển
 
         </div>
+
 
         <div
           id="studentMajor"
@@ -337,6 +299,7 @@
 
         </div>
 
+
         <div
           id="studentNV"
           class="student-info-value"
@@ -357,6 +320,7 @@
           Trạng thái
 
         </div>
+
 
         <div>
 
@@ -384,30 +348,20 @@
   <script>
 
 
-    /*
-     * =====================================================
-     * GOOGLE APPS SCRIPT WEB APP URL
-     *
-     * THAY DÒNG BÊN DƯỚI BẰNG URL WEB APP CỦA BẠN.
-     *
-     * Ví dụ:
-     *
-     * const API_URL =
-     *   "https://script.google.com/macros/s/XXXXXXXX/exec";
-     *
-     * =====================================================
-     */
+    /* =====================================================
+       GOOGLE APPS SCRIPT WEB APP URL
+       
+       CHỈ SỬA DÒNG NÀY
+       ===================================================== */
 
     const API_URL =
       "https://script.google.com/macros/s/AKfycby2WIPSceKFSOhsbTgAv5552T6Z7NyY-Eg8dwMr3FfblwmhxWC5GacvorYKPxhQy2s/exec";
 
 
 
-    /*
-     * =====================================================
-     * LẤY ELEMENT
-     * =====================================================
-     */
+    /* =====================================================
+       GET ELEMENTS
+       ===================================================== */
 
     const cccdInput =
       document.getElementById("cccd");
@@ -430,27 +384,18 @@
 
 
 
-    /*
-     * =====================================================
-     * TRA CỨU
-     * =====================================================
-     */
+    /* =====================================================
+       SEARCH FUNCTION
+       ===================================================== */
 
     async function searchStudent() {
 
-
-      /*
-       * LẤY CCCD
-       */
 
       const cccd =
         cccdInput.value.trim();
 
 
-
-      /*
-       * RESET
-       */
+      /* RESET */
 
       errorMessage.style.display =
         "none";
@@ -459,10 +404,7 @@
         "none";
 
 
-
-      /*
-       * KIỂM TRA 12 SỐ
-       */
+      /* CHECK CCCD */
 
       if (!/^\d{12}$/.test(cccd)) {
 
@@ -474,10 +416,7 @@
       }
 
 
-
-      /*
-       * HIỂN THỊ LOADING
-       */
+      /* LOADING */
 
       searchButton.disabled =
         true;
@@ -486,13 +425,10 @@
         "block";
 
 
-
       try {
 
 
-        /*
-         * TẠO URL
-         */
+        /* CREATE REQUEST URL */
 
         const requestURL =
           API_URL +
@@ -500,49 +436,36 @@
           encodeURIComponent(cccd);
 
 
-
-        /*
-         * GỌI GOOGLE APPS SCRIPT
-         */
+        /* CALL APPS SCRIPT */
 
         const response =
           await fetch(requestURL);
 
 
-
-        /*
-         * KIỂM TRA RESPONSE
-         */
+        /* CHECK RESPONSE */
 
         if (!response.ok) {
 
           throw new Error(
-            "Server error"
+            "Không thể kết nối máy chủ."
           );
 
         }
 
 
-
-        /*
-         * ĐỌC JSON
-         */
+        /* READ JSON */
 
         const result =
           await response.json();
 
 
-
         console.log(
-          "Kết quả tra cứu:",
+          "Kết quả:",
           result
         );
 
 
-
-        /*
-         * KHÔNG TÌM THẤY
-         */
+        /* CHECK SUCCESS */
 
         if (!result.success) {
 
@@ -555,21 +478,15 @@
         }
 
 
-
-        /*
-         * DATA
-         */
+        /* GET STUDENT DATA */
 
         const student =
           result.data;
 
 
-
-        /*
-         * =================================================
-         * HIỂN THỊ HỌ TÊN
-         * =================================================
-         */
+        /* =============================================
+           HỌ TÊN
+           ============================================= */
 
         document.getElementById(
           "studentName"
@@ -577,12 +494,9 @@
           student.hoTen || "";
 
 
-
-        /*
-         * =================================================
-         * HIỂN THỊ SỐ BÁO DANH
-         * =================================================
-         */
+        /* =============================================
+           SỐ BÁO DANH
+           ============================================= */
 
         document.getElementById(
           "studentSBD"
@@ -590,12 +504,9 @@
           student.sbd || "";
 
 
-
-        /*
-         * =================================================
-         * HIỂN THỊ NGÀY SINH
-         * =================================================
-         */
+        /* =============================================
+           NGÀY SINH
+           ============================================= */
 
         document.getElementById(
           "studentDOB"
@@ -603,12 +514,9 @@
           student.ngaySinh || "";
 
 
-
-        /*
-         * =================================================
-         * HIỂN THỊ NGÀNH
-         * =================================================
-         */
+        /* =============================================
+           NGÀNH
+           ============================================= */
 
         document.getElementById(
           "studentMajor"
@@ -616,12 +524,9 @@
           student.nganh || "";
 
 
-
-        /*
-         * =================================================
-         * HIỂN THỊ NGUYỆN VỌNG
-         * =================================================
-         */
+        /* =============================================
+           NGUYỆN VỌNG
+           ============================================= */
 
         document.getElementById(
           "studentNV"
@@ -629,12 +534,9 @@
           student.nv || "";
 
 
-
-        /*
-         * =================================================
-         * HIỂN THỊ TRẠNG THÁI
-         * =================================================
-         */
+        /* =============================================
+           TRẠNG THÁI
+           ============================================= */
 
         document.getElementById(
           "studentStatus"
@@ -643,19 +545,13 @@
           "TRÚNG TUYỂN";
 
 
-
-        /*
-         * HIỂN THỊ RESULT CARD
-         */
+        /* SHOW RESULT */
 
         resultCard.style.display =
           "block";
 
 
-
-        /*
-         * CUỘN XUỐNG
-         */
+        /* SCROLL TO RESULT */
 
         setTimeout(
           function () {
@@ -675,7 +571,6 @@
 
       catch (error) {
 
-
         console.error(
           "Lỗi:",
           error
@@ -686,16 +581,13 @@
           "Có lỗi xảy ra khi tra cứu. Vui lòng thử lại."
         );
 
-
       }
 
 
       finally {
 
-
         searchButton.disabled =
           false;
-
 
         loadingMessage.style.display =
           "none";
@@ -706,11 +598,9 @@
 
 
 
-    /*
-     * =====================================================
-     * HIỂN THỊ LỖI
-     * =====================================================
-     */
+    /* =====================================================
+       ERROR MESSAGE
+       ===================================================== */
 
     function showError(message) {
 
@@ -724,11 +614,9 @@
 
 
 
-    /*
-     * =====================================================
-     * CHỈ CHO NHẬP SỐ
-     * =====================================================
-     */
+    /* =====================================================
+       ONLY ALLOW NUMBERS
+       ===================================================== */
 
     cccdInput.addEventListener(
       "input",
@@ -744,11 +632,9 @@
 
 
 
-    /*
-     * =====================================================
-     * NHẤN ENTER ĐỂ TRA CỨU
-     * =====================================================
-     */
+    /* =====================================================
+       ENTER TO SEARCH
+       ===================================================== */
 
     cccdInput.addEventListener(
       "keydown",
@@ -767,11 +653,9 @@
 
 
 
-    /*
-     * =====================================================
-     * CLICK BUTTON
-     * =====================================================
-     */
+    /* =====================================================
+       BUTTON CLICK
+       ===================================================== */
 
     searchButton.addEventListener(
       "click",
