@@ -3,7 +3,7 @@
 ========================================== */
 
 const API_URL =
-    "https://script.google.com/macros/s/AKfycbx-vhKuknNYn1CN8yVcjKDS44H9qSa6RB4-uSxeGkwkLAx_PR7CBQWeEtuDv2_I0uk/exec";
+    "https://script.google.com/macros/s/AKfycbxBzc11QdHNFCOPVlcAcaPEjd-Fi8BYfLJp9qWsvT5QpPHuiXjJPjr7EsXC6WdcKm8/exec";
 
 
 /* ==========================================
@@ -40,11 +40,17 @@ const resultDescription =
 const studentName =
     document.getElementById("studentName");
 
+const studentSBD =
+    document.getElementById("studentSBD");
+
 const studentDob =
     document.getElementById("studentDob");
 
 const studentMajor =
     document.getElementById("studentMajor");
+
+const studentNV =
+    document.getElementById("studentNV");
 
 const studentStatus =
     document.getElementById("studentStatus");
@@ -56,12 +62,14 @@ const studentStatus =
 
 function showMessage(text) {
 
-    message.textContent = text;
+    message.textContent =
+        text;
 
     message.className =
         "message error";
 
-    message.hidden = false;
+    message.hidden =
+        false;
 
 }
 
@@ -72,7 +80,8 @@ function showMessage(text) {
 
 function hideMessage() {
 
-    message.hidden = true;
+    message.hidden =
+        true;
 
 }
 
@@ -83,7 +92,8 @@ function hideMessage() {
 
 function hideResult() {
 
-    resultCard.hidden = true;
+    resultCard.hidden =
+        true;
 
 }
 
@@ -92,7 +102,9 @@ function hideResult() {
    LOADING
 ========================================== */
 
-function setLoading(isLoading) {
+function setLoading(
+    isLoading
+) {
 
     searchBtn.disabled =
         isLoading;
@@ -110,11 +122,19 @@ function setLoading(isLoading) {
    CLEAN CCCD
 ========================================== */
 
-function cleanCCCD(value) {
+function cleanCCCD(
+    value
+) {
 
     return value
-        .replace(/\D/g, "")
-        .slice(0, 12);
+        .replace(
+            /\D/g,
+            ""
+        )
+        .slice(
+            0,
+            12
+        );
 
 }
 
@@ -123,48 +143,89 @@ function cleanCCCD(value) {
    DISPLAY RESULT
 ========================================== */
 
-function showResult(data) {
+function showResult(
+    data
+) {
+
 
     hideMessage();
 
-    resultCard.hidden = false;
 
+    resultCard.hidden =
+        false;
 
-    /* --------------------------------------
-       LUÔN LÀ TRÚNG TUYỂN
-    -------------------------------------- */
 
     resultCard.className =
         "result-card result-pass";
 
 
+    /* --------------------------------------
+       ICON
+    -------------------------------------- */
+
     resultIcon.textContent =
         "✓";
 
 
+    /* --------------------------------------
+       TITLE
+    -------------------------------------- */
+
     resultTitle.textContent =
         "CHÚC MỪNG!";
 
+
+    /* --------------------------------------
+       DESCRIPTION
+    -------------------------------------- */
 
     resultDescription.textContent =
         "Thí sinh đã trúng tuyển.";
 
 
     /* --------------------------------------
-       THÔNG TIN THÍ SINH
+       HỌ TÊN
     -------------------------------------- */
 
     studentName.textContent =
         data.name || "—";
 
 
+    /* --------------------------------------
+       SỐ BÁO DANH
+    -------------------------------------- */
+
+    studentSBD.textContent =
+        data.sbd || "—";
+
+
+    /* --------------------------------------
+       NGÀY SINH
+    -------------------------------------- */
+
     studentDob.textContent =
         data.dob || "—";
 
 
+    /* --------------------------------------
+       NGÀNH TRÚNG TUYỂN
+    -------------------------------------- */
+
     studentMajor.textContent =
         data.major || "—";
 
+
+    /* --------------------------------------
+       NGUYỆN VỌNG TRÚNG TUYỂN
+    -------------------------------------- */
+
+    studentNV.textContent =
+        data.nv || "—";
+
+
+    /* --------------------------------------
+       TRẠNG THÁI
+    -------------------------------------- */
 
     studentStatus.textContent =
         "TRÚNG TUYỂN";
@@ -216,10 +277,12 @@ async function searchAdmission() {
 
 
     /* --------------------------------------
-       KIỂM TRA ĐỦ 12 SỐ
+       KIỂM TRA 12 SỐ
     -------------------------------------- */
 
-    if (cccd.length !== 12) {
+    if (
+        cccd.length !== 12
+    ) {
 
         showMessage(
             "Số CCCD phải gồm 12 chữ số."
@@ -236,14 +299,16 @@ async function searchAdmission() {
        LOADING
     -------------------------------------- */
 
-    setLoading(true);
+    setLoading(
+        true
+    );
 
 
     try {
 
 
         /* ----------------------------------
-           TẠO URL API
+           API URL
         ---------------------------------- */
 
         const url =
@@ -255,7 +320,7 @@ async function searchAdmission() {
 
 
         /* ----------------------------------
-           GỌI GOOGLE APPS SCRIPT
+           CALL API
         ---------------------------------- */
 
         const response =
@@ -263,16 +328,19 @@ async function searchAdmission() {
                 url,
                 {
                     method: "GET",
+
                     cache: "no-store"
                 }
             );
 
 
         /* ----------------------------------
-           KIỂM TRA RESPONSE
+           RESPONSE ERROR
         ---------------------------------- */
 
-        if (!response.ok) {
+        if (
+            !response.ok
+        ) {
 
             throw new Error(
                 "API request failed"
@@ -282,7 +350,7 @@ async function searchAdmission() {
 
 
         /* ----------------------------------
-           ĐỌC JSON
+           JSON
         ---------------------------------- */
 
         const result =
@@ -290,10 +358,12 @@ async function searchAdmission() {
 
 
         /* ----------------------------------
-           API CÓ LỖI
+           API ERROR
         ---------------------------------- */
 
-        if (!result.success) {
+        if (
+            !result.success
+        ) {
 
             showMessage(
                 result.message ||
@@ -306,10 +376,12 @@ async function searchAdmission() {
 
 
         /* ----------------------------------
-           KHÔNG CÓ CCCD TRONG DANH SÁCH
+           CCCD KHÔNG CÓ TRONG DANH SÁCH
         ---------------------------------- */
 
-        if (!result.found) {
+        if (
+            !result.found
+        ) {
 
             showMessage(
                 "Thông tin thí sinh không có trong danh sách trúng tuyển."
@@ -321,7 +393,7 @@ async function searchAdmission() {
 
 
         /* ----------------------------------
-           CÓ CCCD
+           CCCD CÓ TRONG DANH SÁCH
            → TRÚNG TUYỂN
         ---------------------------------- */
 
@@ -383,7 +455,9 @@ cccdInput.addEventListener(
 
 cccdInput.addEventListener(
     "keydown",
-    function (event) {
+    function (
+        event
+    ) {
 
         if (
             event.key === "Enter"
@@ -398,7 +472,7 @@ cccdInput.addEventListener(
 
 
 /* ==========================================
-   BUTTON CLICK
+   BUTTON
 ========================================== */
 
 searchBtn.addEventListener(
