@@ -470,7 +470,7 @@ body {
 
 
 /* ==========================================
-   STUDENT INFO
+   STUDENT INFORMATION
 ========================================== */
 
 .student-info {
@@ -491,7 +491,7 @@ body {
     display: grid;
 
     grid-template-columns:
-        170px
+        190px
         1fr;
 
     gap: 18px;
