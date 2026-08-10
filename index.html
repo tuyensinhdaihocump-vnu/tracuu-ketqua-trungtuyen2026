@@ -5,132 +5,149 @@
 
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
   <title>Tra cứu kết quả trúng tuyển 2026</title>
 
-
   <style>
+
+    /* =====================================================
+       RESET
+       ===================================================== */
 
     * {
       box-sizing: border-box;
     }
 
+    html,
     body {
-
       margin: 0;
-
-      font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-
-      background:
-        #f3f6fa;
-
-      color: #1f2937;
-
-      min-height: 100vh;
+      padding: 0;
+      width: 100%;
     }
 
+    body {
+      font-family: Arial, Helvetica, sans-serif !important;
+      background: #f3f6fa;
+      color: #1f2937;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+
+    /* =====================================================
+       MAIN CONTAINER
+       ===================================================== */
 
     .container {
-
       width: 100%;
-
       max-width: 760px;
-
       margin: 0 auto;
-
-      padding: 25px 18px 50px;
+      padding: 24px 18px 50px;
     }
 
 
-    /* =========================
+    /* =====================================================
        HEADER
-       ========================= */
+       ===================================================== */
 
     .header {
-
       text-align: center;
-
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
+
+    /* LOGO */
 
     .logo {
-
-      max-width: 170px;
-
-      max-height: 75px;
-
+      display: block;
+      width: auto;
+      max-width: 150px;
+      height: 82px;
       object-fit: contain;
-
-      margin-bottom: 8px;
+      margin: 0 auto 8px;
     }
 
 
-    .title {
+    /* TITLE */
 
+    .title {
       margin: 0;
 
       color: #00843d;
+
+      font-family: Arial, Helvetica, sans-serif !important;
 
       font-size: 28px;
 
       font-weight: 800;
 
-      line-height: 1.2;
+      font-style: normal;
+
+      line-height: 1.15;
+
+      letter-spacing: 0.2px;
 
       text-transform: uppercase;
     }
 
 
-    .subtitle {
+    /* SUBTITLE */
 
+    .subtitle {
       margin-top: 10px;
 
       color: #718096;
 
+      font-family: Arial, Helvetica, sans-serif !important;
+
       font-size: 15px;
+
+      font-weight: 400;
+
+      line-height: 1.4;
     }
 
 
-    /* =========================
-       SEARCH BOX
-       ========================= */
+    /* =====================================================
+       SEARCH CARD
+       ===================================================== */
 
     .search-card {
 
-      background: white;
+      background: #ffffff;
 
       border-radius: 18px;
 
       padding: 26px;
 
       box-shadow:
-        0 8px 25px rgba(0,0,0,0.06);
+        0 8px 25px rgba(0, 0, 0, 0.06);
 
       margin-bottom: 20px;
     }
 
 
+    /* LABEL */
+
     .label {
 
       display: block;
 
-      font-size: 15px;
-
-      font-weight: 700;
-
       margin-bottom: 9px;
 
       color: #374151;
+
+      font-family: Arial, Helvetica, sans-serif !important;
+
+      font-size: 15px;
+
+      font-weight: 700;
     }
 
+
+    /* INPUT */
 
     .input {
 
@@ -144,11 +161,27 @@
 
       border-radius: 12px;
 
+      background: #ffffff;
+
+      color: #111827;
+
+      font-family: Arial, Helvetica, sans-serif !important;
+
       font-size: 16px;
+
+      font-weight: 400;
 
       outline: none;
 
-      transition: 0.2s;
+      transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+    }
+
+
+    .input::placeholder {
+      color: #9ca3af;
+      opacity: 1;
     }
 
 
@@ -157,9 +190,11 @@
       border-color: #00843d;
 
       box-shadow:
-        0 0 0 3px rgba(0,132,61,0.10);
+        0 0 0 3px rgba(0, 132, 61, 0.10);
     }
 
+
+    /* BUTTON */
 
     .button {
 
@@ -175,7 +210,9 @@
 
       background: #00843d;
 
-      color: white;
+      color: #ffffff;
+
+      font-family: Arial, Helvetica, sans-serif !important;
 
       font-size: 15px;
 
@@ -183,13 +220,19 @@
 
       cursor: pointer;
 
-      transition: 0.2s;
+      transition:
+        background 0.2s,
+        transform 0.1s;
     }
 
 
     .button:hover {
-
       background: #006f34;
+    }
+
+
+    .button:active {
+      transform: scale(0.99);
     }
 
 
@@ -198,30 +241,90 @@
       background: #9bbdaa;
 
       cursor: not-allowed;
+
+      transform: none;
     }
 
 
-    .note {
+    /* NOTE */
 
-      text-align: center;
+    .note {
 
       margin-top: 11px;
 
       color: #8a94a6;
 
+      font-family: Arial, Helvetica, sans-serif !important;
+
       font-size: 13px;
+
+      font-weight: 400;
+
+      text-align: center;
     }
 
 
-    /* =========================
-       RESULT
-       ========================= */
+    /* =====================================================
+       LOADING
+       ===================================================== */
+
+    .loading {
+
+      display: none;
+
+      margin-top: 12px;
+
+      color: #00843d;
+
+      font-family: Arial, Helvetica, sans-serif !important;
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      text-align: center;
+    }
+
+
+    /* =====================================================
+       ERROR
+       ===================================================== */
+
+    .error {
+
+      display: none;
+
+      margin-top: 14px;
+
+      padding: 12px 15px;
+
+      border-radius: 10px;
+
+      background: #fff1f2;
+
+      color: #be123c;
+
+      font-family: Arial, Helvetica, sans-serif !important;
+
+      font-size: 14px;
+
+      font-weight: 500;
+
+      line-height: 1.4;
+
+      text-align: center;
+    }
+
+
+    /* =====================================================
+       RESULT CARD
+       ===================================================== */
 
     .result-card {
 
       display: none;
 
-      background: white;
+      background: #ffffff;
 
       border-radius: 18px;
 
@@ -230,9 +333,11 @@
       padding: 28px 24px;
 
       box-shadow:
-        0 8px 25px rgba(0,0,0,0.06);
+        0 8px 25px rgba(0, 0, 0, 0.06);
     }
 
+
+    /* SUCCESS ICON */
 
     .success-icon {
 
@@ -254,50 +359,69 @@
 
       justify-content: center;
 
+      font-family: Arial, Helvetica, sans-serif !important;
+
       font-size: 30px;
 
-      font-weight: bold;
+      font-weight: 700;
+
+      line-height: 1;
     }
 
 
+    /* SUCCESS TITLE */
+
     .success-title {
 
-      text-align: center;
+      margin: 0;
 
       color: #00843d;
+
+      font-family: Arial, Helvetica, sans-serif !important;
 
       font-size: 24px;
 
       font-weight: 800;
 
-      margin: 0;
+      font-style: normal;
+
+      line-height: 1.2;
+
+      text-align: center;
     }
 
 
+    /* SUCCESS SUBTITLE */
+
     .success-subtitle {
-
-      text-align: center;
-
-      color: #718096;
-
-      font-size: 14px;
 
       margin-top: 7px;
 
       margin-bottom: 22px;
+
+      color: #718096;
+
+      font-family: Arial, Helvetica, sans-serif !important;
+
+      font-size: 14px;
+
+      font-weight: 400;
+
+      line-height: 1.4;
+
+      text-align: center;
     }
 
 
-    /* =========================
+    /* =====================================================
        INFORMATION ROW
-       ========================= */
+       ===================================================== */
 
     .info-row {
 
       display: grid;
 
-      grid-template-columns:
-        180px 1fr;
+      grid-template-columns: 180px minmax(0, 1fr);
 
       min-height: 49px;
 
@@ -305,41 +429,57 @@
 
       align-items: center;
 
-      gap: 10px;
+      column-gap: 10px;
     }
 
+
+    /* LABEL */
 
     .info-label {
 
       color: #718096;
 
+      font-family: Arial, Helvetica, sans-serif !important;
+
       font-size: 14px;
 
       font-weight: 500;
+
+      line-height: 1.4;
     }
 
 
+    /* VALUE */
+
     .info-value {
 
+      min-width: 0;
+
       color: #111827;
+
+      font-family: Arial, Helvetica, sans-serif !important;
 
       font-size: 15px;
 
       font-weight: 700;
 
+      line-height: 1.4;
+
       word-break: break-word;
     }
 
 
-    /* =========================
+    /* =====================================================
        STATUS
-       ========================= */
+       ===================================================== */
 
     .status {
 
       display: inline-flex;
 
       align-items: center;
+
+      justify-content: center;
 
       padding: 7px 13px;
 
@@ -349,15 +489,682 @@
 
       color: #087f3b;
 
+      font-family: Arial, Helvetica, sans-serif !important;
+
       font-size: 13px;
+
+      font-weight: 700;
+
+      line-height: 1;
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media (max-width: 600px) {
+
+      .container {
+
+        padding:
+          20px 12px 40px;
+      }
+
+
+      .logo {
+
+        height: 70px;
+
+        margin-bottom: 7px;
+      }
+
+
+      .title {
+
+        font-size: 23px;
+
+        line-height: 1.15;
+      }
+
+
+      .subtitle {
+
+        font-size: 14px;
+      }
+
+
+      .search-card {
+
+        padding: 20px 16px;
+
+        border-radius: 16px;
+      }
+
+
+      .result-card {
+
+        padding:
+          23px 16px;
+
+        border-radius: 16px;
+      }
+
+
+      .info-row {
+
+        grid-template-columns:
+          135px minmax(0, 1fr);
+
+        column-gap: 8px;
+      }
+
+
+      .info-label {
+
+        font-size: 13px;
+      }
+
+
+      .info-value {
+
+        font-size: 14px;
+      }
+
+
+      .success-title {
+
+        font-size: 22px;
+      }
+
+    }
+
+
+    /* =====================================================
+       VERY SMALL MOBILE
+       ===================================================== */
+
+    @media (max-width: 390px) {
+
+      .title {
+        font-size: 21px;
+      }
+
+
+      .info-row {
+
+        grid-template-columns:
+          120px minmax(0, 1fr);
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <div class="container">
+
+
+    <!-- ===================================================
+         HEADER
+         =================================================== -->
+
+    <div class="header">
+
+
+      <img
+        class="logo"
+        src="https://tuyensinhdaihocump-vnu.github.io/tracuutrangthaihoso2026/logo.png"
+        alt="Logo UMP"
+        onerror="this.style.display='none'"
+      >
+
+
+      <h1 class="title">
+        TRA CỨU KẾT QUẢ<br>
+        TRÚNG TUYỂN
+      </h1>
+
+
+      <div class="subtitle">
+        Nhập số CCCD để tra cứu kết quả trúng tuyển.
+      </div>
+
+
+    </div>
+
+
+
+    <!-- ===================================================
+         SEARCH
+         =================================================== -->
+
+    <div class="search-card">
+
+
+      <label
+        for="cccd"
+        class="label"
+      >
+        Số CCCD
+      </label>
+
+
+      <input
+        id="cccd"
+        class="input"
+        type="text"
+        inputmode="numeric"
+        maxlength="12"
+        placeholder="Nhập 12 số CCCD"
+        autocomplete="off"
+      >
+
+
+      <button
+        id="searchBtn"
+        class="button"
+        type="button"
+        onclick="searchStudent()"
+      >
+        TRA CỨU KẾT QUẢ
+      </button>
+
+
+      <div
+        id="loading"
+        class="loading"
+      >
+        Đang tra cứu...
+      </div>
+
+
+      <div class="note">
+        Vui lòng nhập đúng 12 số CCCD.
+      </div>
+
+
+      <div
+        id="error"
+        class="error"
+      ></div>
+
+
+    </div>
+
+
+
+    <!-- ===================================================
+         RESULT
+         =================================================== -->
+
+    <div
+      id="resultCard"
+      class="result-card"
+    >
+
+
+      <!-- SUCCESS ICON -->
+
+      <div class="success-icon">
+        ✓
+      </div>
+
+
+      <!-- TITLE -->
+
+      <h2 class="success-title">
+        CHÚC MỪNG!
+      </h2>
+
+
+      <div class="success-subtitle">
+        Thí sinh đã trúng tuyển.
+      </div>
+
+
+
+      <!-- =================================================
+           HỌ TÊN
+           ================================================= -->
+
+      <div class="info-row">
+
+        <div class="info-label">
+          Họ và tên
+        </div>
+
+        <div
+          id="studentName"
+          class="info-value"
+        ></div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           SỐ BÁO DANH
+           ================================================= -->
+
+      <div class="info-row">
+
+        <div class="info-label">
+          Số báo danh
+        </div>
+
+        <div
+          id="studentSBD"
+          class="info-value"
+        ></div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           NGÀY SINH
+           ================================================= -->
+
+      <div class="info-row">
+
+        <div class="info-label">
+          Ngày sinh
+        </div>
+
+        <div
+          id="studentDOB"
+          class="info-value"
+        ></div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           NGÀNH TRÚNG TUYỂN
+           ================================================= -->
+
+      <div class="info-row">
+
+        <div class="info-label">
+          Ngành trúng tuyển
+        </div>
+
+        <div
+          id="studentMajor"
+          class="info-value"
+        ></div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           NGUYỆN VỌNG TRÚNG TUYỂN
+           ================================================= -->
+
+      <div class="info-row">
+
+        <div class="info-label">
+          Nguyện vọng trúng tuyển
+        </div>
+
+        <div
+          id="studentNV"
+          class="info-value"
+        ></div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           TRẠNG THÁI
+           ================================================= -->
+
+      <div class="info-row">
+
+        <div class="info-label">
+          Trạng thái
+        </div>
+
+        <div>
+
+          <span
+            id="studentStatus"
+            class="status"
+          >
+          </span>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
+  <script>
+
+
+    /* =====================================================
+       GOOGLE APPS SCRIPT WEB APP URL
+       =====================================================
+
+       THAY URL BÊN DƯỚI BẰNG URL WEB APP CỦA BẠN.
+
+       Ví dụ:
+
+       https://script.google.com/macros/s/XXXXXXXX/exec
+
+       ===================================================== */
+
+    const API_URL =
+      "<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Tra cứu kết quả trúng tuyển 2026</title>
+
+  <style>
+
+    /* =====================================================
+       RESET
+       ===================================================== */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif !important;
+      background: #f3f6fa;
+      color: #1f2937;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+
+    /* =====================================================
+       MAIN CONTAINER
+       ===================================================== */
+
+    .container {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 24px 18px 50px;
+    }
+
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    .header {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+
+    /* LOGO */
+
+    .logo {
+      display: block;
+      width: auto;
+      max-width: 150px;
+      height: 82px;
+      object-fit: contain;
+      margin: 0 auto 8px;
+    }
+
+
+    /* TITLE */
+
+    .title {
+      margin: 0;
+
+      color: #00843d;
+
+      font-family: Arial, Helvetica, sans-serif !important;
+
+      font-size: 28px;
+
+      font-weight: 800;
+
+      font-style: normal;
+
+      line-height: 1.15;
+
+      letter-spacing: 0.2px;
+
+      text-transform: uppercase;
+    }
+
+
+    /* SUBTITLE */
+
+    .subtitle {
+      margin-top: 10px;
+
+      color: #718096;
+
+      font-family: Arial, Helvetica, sans-serif !important;
+
+      font-size: 15px;
+
+      font-weight: 400;
+
+      line-height: 1.4;
+    }
+
+
+    /* =====================================================
+       SEARCH CARD
+       ===================================================== */
+
+    .search-card {
+
+      background: #ffffff;
+
+      border-radius: 18px;
+
+      padding: 26px;
+
+      box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.06);
+
+      margin-bottom: 20px;
+    }
+
+
+    /* LABEL */
+
+    .label {
+
+      display: block;
+
+      margin-bottom: 9px;
+
+      color: #374151;
+
+      font-family: Arial, Helvetica, sans-serif !important;
+
+      font-size: 15px;
 
       font-weight: 700;
     }
 
 
-    /* =========================
+    /* INPUT */
+
+    .input {
+
+      width: 100%;
+
+      height: 50px;
+
+      padding: 0 15px;
+
+      border: 1px solid #d8dee8;
+
+      border-radius: 12px;
+
+      background: #ffffff;
+
+      color: #111827;
+
+      font-family: Arial, Helvetica, sans-serif !important;
+
+      font-size: 16px;
+
+      font-weight: 400;
+
+      outline: none;
+
+      transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+    }
+
+
+    .input::placeholder {
+      color: #9ca3af;
+      opacity: 1;
+    }
+
+
+    .input:focus {
+
+      border-color: #00843d;
+
+      box-shadow:
+        0 0 0 3px rgba(0, 132, 61, 0.10);
+    }
+
+
+    /* BUTTON */
+
+    .button {
+
+      width: 100%;
+
+      height: 50px;
+
+      margin-top: 14px;
+
+      border: none;
+
+      border-radius: 11px;
+
+      background: #00843d;
+
+      color: #ffffff;
+
+      font-family: Arial, Helvetica, sans-serif !important;
+
+      font-size: 15px;
+
+      font-weight: 700;
+
+      cursor: pointer;
+
+      transition:
+        background 0.2s,
+        transform 0.1s;
+    }
+
+
+    .button:hover {
+      background: #006f34;
+    }
+
+
+    .button:active {
+      transform: scale(0.99);
+    }
+
+
+    .button:disabled {
+
+      background: #9bbdaa;
+
+      cursor: not-allowed;
+
+      transform: none;
+    }
+
+
+    /* NOTE */
+
+    .note {
+
+      margin-top: 11px;
+
+      color: #8a94a6;
+
+      font-family: Arial, Helvetica, sans-serif !important;
+
+      font-size: 13px;
+
+      font-weight: 400;
+
+      text-align: center;
+    }
+
+
+    /* =====================================================
+       LOADING
+       ===================================================== */
+
+    .loading {
+
+      display: none;
+
+      margin-top: 12px;
+
+      color: #00843d;
+
+      font-family: Arial, Helvetica, sans-serif !important;
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      text-align: center;
+    }
+
+
+    /* =====================================================
        ERROR
-       ========================= */
+       ===================================================== */
 
     .error {
 
@@ -373,33 +1180,204 @@
 
       color: #be123c;
 
-      text-align: center;
+      font-family: Arial, Helvetica, sans-serif !important;
 
       font-size: 14px;
+
+      font-weight: 500;
+
+      line-height: 1.4;
+
+      text-align: center;
     }
 
 
-    /* =========================
-       LOADING
-       ========================= */
+    /* =====================================================
+       RESULT CARD
+       ===================================================== */
 
-    .loading {
+    .result-card {
 
       display: none;
 
-      text-align: center;
+      background: #ffffff;
 
-      margin-top: 12px;
+      border-radius: 18px;
 
-      color: #00843d;
+      border-top: 4px solid #00843d;
 
-      font-size: 14px;
+      padding: 28px 24px;
+
+      box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.06);
     }
 
 
-    /* =========================
+    /* SUCCESS ICON */
+
+    .success-icon {
+
+      width: 52px;
+
+      height: 52px;
+
+      margin: 0 auto 10px;
+
+      border-radius: 50%;
+
+      background: #dcfce7;
+
+      color: #00843d;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-family: Arial, Helvetica, sans-serif !important;
+
+      font-size: 30px;
+
+      font-weight: 700;
+
+      line-height: 1;
+    }
+
+
+    /* SUCCESS TITLE */
+
+    .success-title {
+
+      margin: 0;
+
+      color: #00843d;
+
+      font-family: Arial, Helvetica, sans-serif !important;
+
+      font-size: 24px;
+
+      font-weight: 800;
+
+      font-style: normal;
+
+      line-height: 1.2;
+
+      text-align: center;
+    }
+
+
+    /* SUCCESS SUBTITLE */
+
+    .success-subtitle {
+
+      margin-top: 7px;
+
+      margin-bottom: 22px;
+
+      color: #718096;
+
+      font-family: Arial, Helvetica, sans-serif !important;
+
+      font-size: 14px;
+
+      font-weight: 400;
+
+      line-height: 1.4;
+
+      text-align: center;
+    }
+
+
+    /* =====================================================
+       INFORMATION ROW
+       ===================================================== */
+
+    .info-row {
+
+      display: grid;
+
+      grid-template-columns: 180px minmax(0, 1fr);
+
+      min-height: 49px;
+
+      border-top: 1px solid #e5e7eb;
+
+      align-items: center;
+
+      column-gap: 10px;
+    }
+
+
+    /* LABEL */
+
+    .info-label {
+
+      color: #718096;
+
+      font-family: Arial, Helvetica, sans-serif !important;
+
+      font-size: 14px;
+
+      font-weight: 500;
+
+      line-height: 1.4;
+    }
+
+
+    /* VALUE */
+
+    .info-value {
+
+      min-width: 0;
+
+      color: #111827;
+
+      font-family: Arial, Helvetica, sans-serif !important;
+
+      font-size: 15px;
+
+      font-weight: 700;
+
+      line-height: 1.4;
+
+      word-break: break-word;
+    }
+
+
+    /* =====================================================
+       STATUS
+       ===================================================== */
+
+    .status {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 7px 13px;
+
+      border-radius: 20px;
+
+      background: #dcfce7;
+
+      color: #087f3b;
+
+      font-family: Arial, Helvetica, sans-serif !important;
+
+      font-size: 13px;
+
+      font-weight: 700;
+
+      line-height: 1;
+    }
+
+
+    /* =====================================================
        MOBILE
-       ========================= */
+       ===================================================== */
 
     @media (max-width: 600px) {
 
@@ -410,15 +1388,33 @@
       }
 
 
+      .logo {
+
+        height: 70px;
+
+        margin-bottom: 7px;
+      }
+
+
       .title {
 
-        font-size: 22px;
+        font-size: 23px;
+
+        line-height: 1.15;
+      }
+
+
+      .subtitle {
+
+        font-size: 14px;
       }
 
 
       .search-card {
 
         padding: 20px 16px;
+
+        border-radius: 16px;
       }
 
 
@@ -426,13 +1422,17 @@
 
         padding:
           23px 16px;
+
+        border-radius: 16px;
       }
 
 
       .info-row {
 
         grid-template-columns:
-          135px 1fr;
+          135px minmax(0, 1fr);
+
+        column-gap: 8px;
       }
 
 
@@ -447,6 +1447,32 @@
         font-size: 14px;
       }
 
+
+      .success-title {
+
+        font-size: 22px;
+      }
+
+    }
+
+
+    /* =====================================================
+       VERY SMALL MOBILE
+       ===================================================== */
+
+    @media (max-width: 390px) {
+
+      .title {
+        font-size: 21px;
+      }
+
+
+      .info-row {
+
+        grid-template-columns:
+          120px minmax(0, 1fr);
+      }
+
     }
 
   </style>
@@ -457,490 +1483,923 @@
 <body>
 
 
-<div class="container">
+  <div class="container">
 
 
-  <!-- =========================
-       HEADER
-       ========================= -->
+    <!-- ===================================================
+         HEADER
+         =================================================== -->
 
-  <div class="header">
+    <div class="header">
 
-    <!-- Nếu có logo thì thay URL bên dưới -->
-    <img
-      class="logo"
-      src="https://tuyensinhdaihocump-vnu.github.io/tracuutrangthaihoso2026/logo.png"
-      alt="Logo"
-      onerror="this.style.display='none'"
+
+      <img
+        class="logo"
+        src="https://tuyensinhdaihocump-vnu.github.io/tracuutrangthaihoso2026/logo.png"
+        alt="Logo UMP"
+        onerror="this.style.display='none'"
+      >
+
+
+      <h1 class="title">
+        TRA CỨU KẾT QUẢ<br>
+        TRÚNG TUYỂN
+      </h1>
+
+
+      <div class="subtitle">
+        Nhập số CCCD để tra cứu kết quả trúng tuyển.
+      </div>
+
+
+    </div>
+
+
+
+    <!-- ===================================================
+         SEARCH
+         =================================================== -->
+
+    <div class="search-card">
+
+
+      <label
+        for="cccd"
+        class="label"
+      >
+        Số CCCD
+      </label>
+
+
+      <input
+        id="cccd"
+        class="input"
+        type="text"
+        inputmode="numeric"
+        maxlength="12"
+        placeholder="Nhập 12 số CCCD"
+        autocomplete="off"
+      >
+
+
+      <button
+        id="searchBtn"
+        class="button"
+        type="button"
+        onclick="searchStudent()"
+      >
+        TRA CỨU KẾT QUẢ
+      </button>
+
+
+      <div
+        id="loading"
+        class="loading"
+      >
+        Đang tra cứu...
+      </div>
+
+
+      <div class="note">
+        Vui lòng nhập đúng 12 số CCCD.
+      </div>
+
+
+      <div
+        id="error"
+        class="error"
+      ></div>
+
+
+    </div>
+
+
+
+    <!-- ===================================================
+         RESULT
+         =================================================== -->
+
+    <div
+      id="resultCard"
+      class="result-card"
     >
 
 
-    <h1 class="title">
-      TRA CỨU KẾT QUẢ<br>
-      TRÚNG TUYỂN
-    </h1>
+      <!-- SUCCESS ICON -->
+
+      <div class="success-icon">
+        ✓
+      </div>
 
 
-    <div class="subtitle">
-      Nhập số CCCD để tra cứu kết quả trúng tuyển.
+      <!-- TITLE -->
+
+      <h2 class="success-title">
+        CHÚC MỪNG!
+      </h2>
+
+
+      <div class="success-subtitle">
+        Thí sinh đã trúng tuyển.
+      </div>
+
+
+
+      <!-- =================================================
+           HỌ TÊN
+           ================================================= -->
+
+      <div class="info-row">
+
+        <div class="info-label">
+          Họ và tên
+        </div>
+
+        <div
+          id="studentName"
+          class="info-value"
+        ></div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           SỐ BÁO DANH
+           ================================================= -->
+
+      <div class="info-row">
+
+        <div class="info-label">
+          Số báo danh
+        </div>
+
+        <div
+          id="studentSBD"
+          class="info-value"
+        ></div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           NGÀY SINH
+           ================================================= -->
+
+      <div class="info-row">
+
+        <div class="info-label">
+          Ngày sinh
+        </div>
+
+        <div
+          id="studentDOB"
+          class="info-value"
+        ></div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           NGÀNH TRÚNG TUYỂN
+           ================================================= -->
+
+      <div class="info-row">
+
+        <div class="info-label">
+          Ngành trúng tuyển
+        </div>
+
+        <div
+          id="studentMajor"
+          class="info-value"
+        ></div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           NGUYỆN VỌNG TRÚNG TUYỂN
+           ================================================= -->
+
+      <div class="info-row">
+
+        <div class="info-label">
+          Nguyện vọng trúng tuyển
+        </div>
+
+        <div
+          id="studentNV"
+          class="info-value"
+        ></div>
+
+      </div>
+
+
+
+      <!-- =================================================
+           TRẠNG THÁI
+           ================================================= -->
+
+      <div class="info-row">
+
+        <div class="info-label">
+          Trạng thái
+        </div>
+
+        <div>
+
+          <span
+            id="studentStatus"
+            class="status"
+          >
+          </span>
+
+        </div>
+
+      </div>
+
+
     </div>
+
 
   </div>
 
 
 
-  <!-- =========================
-       SEARCH
-       ========================= -->
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
 
-  <div class="search-card">
+  <script>
 
-    <label class="label">
-      Số CCCD
-    </label>
 
+    /* =====================================================
+       GOOGLE APPS SCRIPT WEB APP URL
+       =====================================================
 
-    <input
-      id="cccd"
-      class="input"
-      type="text"
-      inputmode="numeric"
-      maxlength="12"
-      placeholder="Nhập 12 số CCCD"
-      autocomplete="off"
-    >
+       THAY URL BÊN DƯỚI BẰNG URL WEB APP CỦA BẠN.
 
+       Ví dụ:
 
-    <button
-      id="searchBtn"
-      class="button"
-      onclick="searchStudent()"
-    >
-      TRA CỨU KẾT QUẢ
-    </button>
+       https://script.google.com/macros/s/XXXXXXXX/exec
 
+       ===================================================== */
 
-    <div id="loading" class="loading">
-      Đang tra cứu...
-    </div>
+    const API_URL =
+      "https://script.google.com/macros/s/AKfycbxSsJyjs2Wh-VwQzqoxjNs1c839v1HppshpxiEvhW5GFQ-hYNvlRjl-OCj9aaFulxE/exec";
 
 
-    <div class="note">
-      Vui lòng nhập đúng 12 số CCCD.
-    </div>
 
+    /* =====================================================
+       SEARCH STUDENT
+       ===================================================== */
 
-    <div id="error" class="error"></div>
+    async function searchStudent() {
 
-  </div>
 
+      const input =
+        document.getElementById("cccd");
 
 
-  <!-- =========================
-       RESULT
-       ========================= -->
+      const button =
+        document.getElementById("searchBtn");
 
-  <div
-    id="resultCard"
-    class="result-card"
-  >
 
-    <div class="success-icon">
-      ✓
-    </div>
+      const loading =
+        document.getElementById("loading");
 
 
-    <h2 class="success-title">
-      CHÚC MỪNG!
-    </h2>
+      const error =
+        document.getElementById("error");
 
 
-    <div class="success-subtitle">
-      Thí sinh đã trúng tuyển.
-    </div>
+      const resultCard =
+        document.getElementById("resultCard");
 
 
+      const cccd =
+        input.value.trim();
 
-    <!-- HỌ TÊN -->
 
-    <div class="info-row">
 
-      <div class="info-label">
-        Họ và tên
-      </div>
+      /* -----------------------------------------------
+         RESET
+         ----------------------------------------------- */
 
-      <div
-        id="studentName"
-        class="info-value"
-      ></div>
+      resultCard.style.display = "none";
 
-    </div>
+      error.style.display = "none";
 
 
 
-    <!-- SỐ BÁO DANH -->
+      /* -----------------------------------------------
+         CHECK CCCD
+         ----------------------------------------------- */
 
-    <div class="info-row">
+      if (!/^\d{12}$/.test(cccd)) {
 
-      <div class="info-label">
-        Số báo danh
-      </div>
+        showError(
+          "Vui lòng nhập đúng 12 số CCCD."
+        );
 
-      <div
-        id="studentSBD"
-        class="info-value"
-      ></div>
+        return;
+      }
 
-    </div>
 
 
+      /* -----------------------------------------------
+         LOADING
+         ----------------------------------------------- */
 
-    <!-- NGÀY SINH -->
+      button.disabled = true;
 
-    <div class="info-row">
+      loading.style.display = "block";
 
-      <div class="info-label">
-        Ngày sinh
-      </div>
 
-      <div
-        id="studentDOB"
-        class="info-value"
-      ></div>
 
-    </div>
+      try {
 
 
+        /* ---------------------------------------------
+           CREATE API URL
+           --------------------------------------------- */
 
-    <!-- NGÀNH -->
+        const url =
+          API_URL +
+          "?cccd=" +
+          encodeURIComponent(cccd);
 
-    <div class="info-row">
 
-      <div class="info-label">
-        Ngành trúng tuyển
-      </div>
 
-      <div
-        id="studentMajor"
-        class="info-value"
-      ></div>
+        /* ---------------------------------------------
+           CALL GOOGLE APPS SCRIPT
+           --------------------------------------------- */
 
-    </div>
+        const response =
+          await fetch(url);
 
 
 
-    <!-- NGUYỆN VỌNG -->
+        if (!response.ok) {
 
-    <div class="info-row">
+          throw new Error(
+            "Không thể kết nối máy chủ."
+          );
 
-      <div class="info-label">
-        Nguyện vọng trúng tuyển
-      </div>
+        }
 
-      <div
-        id="studentNV"
-        class="info-value"
-      ></div>
 
-    </div>
 
+        /* ---------------------------------------------
+           READ JSON
+           --------------------------------------------- */
 
+        const resultData =
+          await response.json();
 
-    <!-- TRẠNG THÁI -->
 
-    <div class="info-row">
 
-      <div class="info-label">
-        Trạng thái
-      </div>
+        console.log(
+          "Dữ liệu nhận được:",
+          resultData
+        );
 
-      <div>
 
-        <span
-          id="studentStatus"
-          class="status"
-        >
-        </span>
 
-      </div>
+        /* ---------------------------------------------
+           CHECK RESULT
+           --------------------------------------------- */
 
-    </div>
+        if (!resultData.success) {
 
+          showError(
+            resultData.message ||
+            "Không tìm thấy thông tin thí sinh."
+          );
 
-  </div>
+          return;
+        }
 
 
-</div>
 
+        /* ---------------------------------------------
+           GET STUDENT DATA
+           --------------------------------------------- */
 
+        const data =
+          resultData.data;
 
-<script>
 
 
-/************************************************
- * URL GOOGLE APPS SCRIPT
- *
- * THAY URL BÊN DƯỚI BẰNG URL WEB APP CỦA BẠN
- ************************************************/
+        /* =============================================
+           DISPLAY STUDENT INFORMATION
+           ============================================= */
 
-const API_URL =
-  "DÁN_URL_WEB_APP_GOOGLE_APPS_SCRIPT_CỦA_BẠN_VÀO_ĐÂY";
 
+        /* HỌ TÊN */
 
+        document.getElementById(
+          "studentName"
+        ).textContent =
+          data.hoTen || "";
 
-/************************************************
- * TRA CỨU
- ************************************************/
 
-async function searchStudent() {
 
+        /* SỐ BÁO DANH */
 
-  const input =
-    document.getElementById("cccd");
+        document.getElementById(
+          "studentSBD"
+        ).textContent =
+          data.sbd || "";
 
-  const button =
-    document.getElementById("searchBtn");
 
-  const loading =
-    document.getElementById("loading");
 
-  const error =
-    document.getElementById("error");
+        /* NGÀY SINH */
 
-  const result =
-    document.getElementById("resultCard");
+        document.getElementById(
+          "studentDOB"
+        ).textContent =
+          data.ngaySinh || "";
 
 
-  const cccd =
-    input.value.trim();
 
+        /* NGÀNH */
 
-  // Ẩn kết quả cũ
+        document.getElementById(
+          "studentMajor"
+        ).textContent =
+          data.nganh || "";
 
-  result.style.display = "none";
 
-  error.style.display = "none";
 
+        /* NGUYỆN VỌNG */
 
-  // Kiểm tra CCCD
+        document.getElementById(
+          "studentNV"
+        ).textContent =
+          data.nv || "";
 
-  if (!/^\d{12}$/.test(cccd)) {
 
-    showError(
-      "Vui lòng nhập đúng 12 số CCCD."
-    );
 
-    return;
-  }
+        /* TRẠNG THÁI */
 
+        document.getElementById(
+          "studentStatus"
+        ).textContent =
+          data.trangThai ||
+          "TRÚNG TUYỂN";
 
-  // Loading
 
-  button.disabled = true;
 
-  loading.style.display = "block";
+        /* ---------------------------------------------
+           SHOW RESULT
+           --------------------------------------------- */
 
+        resultCard.style.display =
+          "block";
 
-  try {
 
 
-    const url =
-      API_URL +
-      "?cccd=" +
-      encodeURIComponent(cccd);
+        /* ---------------------------------------------
+           SCROLL TO RESULT
+           --------------------------------------------- */
 
+        setTimeout(function () {
 
-    const response =
-      await fetch(url);
+          resultCard.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
 
+        }, 100);
 
-    if (!response.ok) {
 
-      throw new Error(
-        "Không thể kết nối máy chủ."
-      );
-    }
+      }
 
 
-    const resultData =
-      await response.json();
+      catch (errorObject) {
 
 
-    console.log(
-      "Dữ liệu nhận được:",
-      resultData
-    );
+        console.error(
+          errorObject
+        );
 
 
-    if (
-      !resultData.success
-    ) {
+        showError(
+          "Có lỗi xảy ra khi tra cứu. Vui lòng thử lại."
+        );
 
-      showError(
-        resultData.message ||
-        "Không tìm thấy thông tin thí sinh."
-      );
 
-      return;
-    }
+      }
 
 
-    // Dữ liệu thí sinh
+      finally {
 
-    const data =
-      resultData.data;
 
+        button.disabled = false;
 
-    /**********************************************
-     * ĐỔ DỮ LIỆU LÊN GIAO DIỆN
-     **********************************************/
+        loading.style.display = "none";
 
-    document.getElementById(
-      "studentName"
-    ).textContent =
-      data.hoTen || "";
-
-
-    // ⭐ SỐ BÁO DANH
-
-    document.getElementById(
-      "studentSBD"
-    ).textContent =
-      data.sbd || "";
-
-
-    document.getElementById(
-      "studentDOB"
-    ).textContent =
-      data.ngaySinh || "";
-
-
-    document.getElementById(
-      "studentMajor"
-    ).textContent =
-      data.nganh || "";
-
-
-    // ⭐ NGUYỆN VỌNG
-
-    document.getElementById(
-      "studentNV"
-    ).textContent =
-      data.nv || "";
-
-
-    document.getElementById(
-      "studentStatus"
-    ).textContent =
-      data.trangThai ||
-      "TRÚNG TUYỂN";
-
-
-    // Hiển thị kết quả
-
-    result.style.display =
-      "block";
-
-
-    // Cuộn xuống kết quả
-
-    setTimeout(() => {
-
-      result.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-
-    }, 100);
-
-
-  }
-
-  catch (errorObject) {
-
-    console.error(
-      errorObject
-    );
-
-    showError(
-      "Có lỗi xảy ra khi tra cứu. Vui lòng thử lại."
-    );
-
-  }
-
-  finally {
-
-    button.disabled = false;
-
-    loading.style.display = "none";
-
-  }
-
-}
-
-
-
-/************************************************
- * HIỂN THỊ LỖI
- ************************************************/
-
-function showError(message) {
-
-  const error =
-    document.getElementById("error");
-
-  error.textContent =
-    message;
-
-  error.style.display =
-    "block";
-}
-
-
-
-/************************************************
- * CHỈ CHO NHẬP SỐ
- ************************************************/
-
-document
-  .getElementById("cccd")
-  .addEventListener(
-    "input",
-    function () {
-
-      this.value =
-        this.value
-          .replace(/\D/g, "")
-          .slice(0, 12);
-
-    }
-  );
-
-
-
-/************************************************
- * ENTER ĐỂ TRA CỨU
- ************************************************/
-
-document
-  .getElementById("cccd")
-  .addEventListener(
-    "keydown",
-    function (event) {
-
-      if (
-        event.key === "Enter"
-      ) {
-
-        searchStudent();
 
       }
 
     }
-  );
 
 
-</script>
+
+    /* =====================================================
+       SHOW ERROR
+       ===================================================== */
+
+    function showError(message) {
+
+      const error =
+        document.getElementById("error");
+
+
+      error.textContent =
+        message;
+
+
+      error.style.display =
+        "block";
+
+    }
+
+
+
+    /* =====================================================
+       ONLY NUMBERS
+       ===================================================== */
+
+    document
+      .getElementById("cccd")
+      .addEventListener(
+        "input",
+        function () {
+
+          this.value =
+            this.value
+              .replace(/\D/g, "")
+              .slice(0, 12);
+
+        }
+      );
+
+
+
+    /* =====================================================
+       ENTER TO SEARCH
+       ===================================================== */
+
+    document
+      .getElementById("cccd")
+      .addEventListener(
+        "keydown",
+        function (event) {
+
+          if (event.key === "Enter") {
+
+            searchStudent();
+
+          }
+
+        }
+      );
+
+
+  </script>
+
+
+</body>
+
+</html>";
+
+
+
+    /* =====================================================
+       SEARCH STUDENT
+       ===================================================== */
+
+    async function searchStudent() {
+
+
+      const input =
+        document.getElementById("cccd");
+
+
+      const button =
+        document.getElementById("searchBtn");
+
+
+      const loading =
+        document.getElementById("loading");
+
+
+      const error =
+        document.getElementById("error");
+
+
+      const resultCard =
+        document.getElementById("resultCard");
+
+
+      const cccd =
+        input.value.trim();
+
+
+
+      /* -----------------------------------------------
+         RESET
+         ----------------------------------------------- */
+
+      resultCard.style.display = "none";
+
+      error.style.display = "none";
+
+
+
+      /* -----------------------------------------------
+         CHECK CCCD
+         ----------------------------------------------- */
+
+      if (!/^\d{12}$/.test(cccd)) {
+
+        showError(
+          "Vui lòng nhập đúng 12 số CCCD."
+        );
+
+        return;
+      }
+
+
+
+      /* -----------------------------------------------
+         LOADING
+         ----------------------------------------------- */
+
+      button.disabled = true;
+
+      loading.style.display = "block";
+
+
+
+      try {
+
+
+        /* ---------------------------------------------
+           CREATE API URL
+           --------------------------------------------- */
+
+        const url =
+          API_URL +
+          "?cccd=" +
+          encodeURIComponent(cccd);
+
+
+
+        /* ---------------------------------------------
+           CALL GOOGLE APPS SCRIPT
+           --------------------------------------------- */
+
+        const response =
+          await fetch(url);
+
+
+
+        if (!response.ok) {
+
+          throw new Error(
+            "Không thể kết nối máy chủ."
+          );
+
+        }
+
+
+
+        /* ---------------------------------------------
+           READ JSON
+           --------------------------------------------- */
+
+        const resultData =
+          await response.json();
+
+
+
+        console.log(
+          "Dữ liệu nhận được:",
+          resultData
+        );
+
+
+
+        /* ---------------------------------------------
+           CHECK RESULT
+           --------------------------------------------- */
+
+        if (!resultData.success) {
+
+          showError(
+            resultData.message ||
+            "Không tìm thấy thông tin thí sinh."
+          );
+
+          return;
+        }
+
+
+
+        /* ---------------------------------------------
+           GET STUDENT DATA
+           --------------------------------------------- */
+
+        const data =
+          resultData.data;
+
+
+
+        /* =============================================
+           DISPLAY STUDENT INFORMATION
+           ============================================= */
+
+
+        /* HỌ TÊN */
+
+        document.getElementById(
+          "studentName"
+        ).textContent =
+          data.hoTen || "";
+
+
+
+        /* SỐ BÁO DANH */
+
+        document.getElementById(
+          "studentSBD"
+        ).textContent =
+          data.sbd || "";
+
+
+
+        /* NGÀY SINH */
+
+        document.getElementById(
+          "studentDOB"
+        ).textContent =
+          data.ngaySinh || "";
+
+
+
+        /* NGÀNH */
+
+        document.getElementById(
+          "studentMajor"
+        ).textContent =
+          data.nganh || "";
+
+
+
+        /* NGUYỆN VỌNG */
+
+        document.getElementById(
+          "studentNV"
+        ).textContent =
+          data.nv || "";
+
+
+
+        /* TRẠNG THÁI */
+
+        document.getElementById(
+          "studentStatus"
+        ).textContent =
+          data.trangThai ||
+          "TRÚNG TUYỂN";
+
+
+
+        /* ---------------------------------------------
+           SHOW RESULT
+           --------------------------------------------- */
+
+        resultCard.style.display =
+          "block";
+
+
+
+        /* ---------------------------------------------
+           SCROLL TO RESULT
+           --------------------------------------------- */
+
+        setTimeout(function () {
+
+          resultCard.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+
+        }, 100);
+
+
+      }
+
+
+      catch (errorObject) {
+
+
+        console.error(
+          errorObject
+        );
+
+
+        showError(
+          "Có lỗi xảy ra khi tra cứu. Vui lòng thử lại."
+        );
+
+
+      }
+
+
+      finally {
+
+
+        button.disabled = false;
+
+        loading.style.display = "none";
+
+
+      }
+
+    }
+
+
+
+    /* =====================================================
+       SHOW ERROR
+       ===================================================== */
+
+    function showError(message) {
+
+      const error =
+        document.getElementById("error");
+
+
+      error.textContent =
+        message;
+
+
+      error.style.display =
+        "block";
+
+    }
+
+
+
+    /* =====================================================
+       ONLY NUMBERS
+       ===================================================== */
+
+    document
+      .getElementById("cccd")
+      .addEventListener(
+        "input",
+        function () {
+
+          this.value =
+            this.value
+              .replace(/\D/g, "")
+              .slice(0, 12);
+
+        }
+      );
+
+
+
+    /* =====================================================
+       ENTER TO SEARCH
+       ===================================================== */
+
+    document
+      .getElementById("cccd")
+      .addEventListener(
+        "keydown",
+        function (event) {
+
+          if (event.key === "Enter") {
+
+            searchStudent();
+
+          }
+
+        }
+      );
+
+
+  </script>
 
 
 </body>
