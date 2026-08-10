@@ -1,3 +1,20 @@
+/* =========================================================
+   UMP - TRA CỨU KẾT QUẢ TRÚNG TUYỂN 2026
+   FONT: ROBOTO
+   ========================================================= */
+
+
+/* =========================================================
+   ROBOTO - SUPPORT VIETNAMESE
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&display=swap');
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
 * {
   box-sizing: border-box;
 }
@@ -10,28 +27,59 @@ body {
   min-height: 100%;
 }
 
+
+/* =========================================================
+   GLOBAL FONT
+   ========================================================= */
+
+body,
+div,
+span,
+label,
+input,
+button,
+section,
+header,
+main,
+p {
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
 body {
-  margin: 0;
   background: #f3f6fa;
+
   color: #1f2937;
 
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 
   font-size: 16px;
+
   font-weight: 400;
+
   font-style: normal;
 
+  line-height: 1.5;
+
+  min-height: 100vh;
+
   -webkit-font-smoothing: antialiased;
+
   -moz-osx-font-smoothing: grayscale;
 }
 
 
-/* =========================================
-   CONTAINER
-   ========================================= */
+/* =========================================================
+   MAIN CONTAINER
+   ========================================================= */
 
 .page-container {
   width: 100%;
+
   max-width: 760px;
 
   margin: 0 auto;
@@ -40,40 +88,45 @@ body {
 }
 
 
-/* =========================================
+/* =========================================================
    HEADER
-   ========================================= */
+   ========================================================= */
 
 .page-header {
   width: 100%;
 
   margin: 0 0 22px 0;
+
   padding: 0;
 
   text-align: center;
 }
 
 
-/* =========================================
+/* =========================================================
    LOGO
-   ========================================= */
+   ========================================================= */
 
 .ump-logo {
   display: block;
 
   width: auto;
+
   max-width: 150px;
+
   height: 82px;
 
   margin: 0 auto 8px auto;
+
+  padding: 0;
 
   object-fit: contain;
 }
 
 
-/* =========================================
+/* =========================================================
    MAIN HEADING
-   ========================================= */
+   ========================================================= */
 
 .main-heading {
   display: block;
@@ -81,11 +134,12 @@ body {
   width: 100%;
 
   margin: 0;
+
   padding: 0;
 
   color: #00843d;
 
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 
   font-size: 28px;
 
@@ -93,7 +147,9 @@ body {
 
   font-style: normal;
 
-  line-height: 1.2;
+  font-variant: normal;
+
+  line-height: 1.18;
 
   letter-spacing: 0;
 
@@ -102,26 +158,31 @@ body {
   text-transform: uppercase;
 
   text-decoration: none;
+
+  text-shadow: none;
 }
 
 
-/* =========================================
+/* =========================================================
    SUBTITLE
-   ========================================= */
+   ========================================================= */
 
 .page-subtitle {
   display: block;
 
   margin: 10px 0 0 0;
+
   padding: 0;
 
   color: #718096;
 
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 
   font-size: 15px;
 
   font-weight: 400;
+
+  font-style: normal;
 
   line-height: 1.5;
 
@@ -129,14 +190,15 @@ body {
 }
 
 
-/* =========================================
+/* =========================================================
    SEARCH CARD
-   ========================================= */
+   ========================================================= */
 
 .search-card {
   width: 100%;
 
   margin: 0 0 20px 0;
+
   padding: 26px;
 
   background: #ffffff;
@@ -148,38 +210,44 @@ body {
 }
 
 
-/* =========================================
+/* =========================================================
    LABEL
-   ========================================= */
+   ========================================================= */
 
 .cccd-label {
   display: block;
 
   margin: 0 0 9px 0;
 
+  padding: 0;
+
   color: #374151;
 
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 
   font-size: 15px;
 
-  font-weight: 700;
+  font-weight: 500;
+
+  font-style: normal;
 
   line-height: 1.5;
 }
 
 
-/* =========================================
+/* =========================================================
    INPUT
-   ========================================= */
+   ========================================================= */
 
 .cccd-input {
   display: block;
 
   width: 100%;
+
   height: 50px;
 
   margin: 0;
+
   padding: 0 15px;
 
   border: 1px solid #d8dee8;
@@ -192,27 +260,46 @@ body {
 
   color: #111827;
 
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 
   font-size: 16px;
 
   font-weight: 400;
 
+  font-style: normal;
+
   line-height: 50px;
 
   appearance: none;
+
   -webkit-appearance: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
+
+
+/* =========================================================
+   INPUT PLACEHOLDER
+   ========================================================= */
 
 .cccd-input::placeholder {
   color: #9ca3af;
 
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 
   font-size: 16px;
 
+  font-weight: 400;
+
   opacity: 1;
 }
+
+
+/* =========================================================
+   INPUT FOCUS
+   ========================================================= */
 
 .cccd-input:focus {
   border-color: #00843d;
@@ -222,66 +309,100 @@ body {
 }
 
 
-/* =========================================
-   BUTTON
-   ========================================= */
+/* =========================================================
+   SEARCH BUTTON
+   ========================================================= */
 
 .search-button {
   display: block;
 
   width: 100%;
+
   height: 50px;
 
   margin: 14px 0 0 0;
+
   padding: 0;
 
   border: none;
 
   border-radius: 11px;
 
+  outline: none;
+
   background: #00843d;
 
   color: #ffffff;
 
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 
   font-size: 15px;
 
   font-weight: 700;
+
+  font-style: normal;
 
   line-height: 50px;
 
   text-align: center;
 
   cursor: pointer;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  transition:
+    background 0.2s ease,
+    transform 0.1s ease;
 }
+
+
+/* BUTTON HOVER */
 
 .search-button:hover {
   background: #006f34;
 }
 
-.search-button:disabled {
-  background: #9bbdaa;
-  cursor: not-allowed;
+
+/* BUTTON ACTIVE */
+
+.search-button:active {
+  transform: scale(0.99);
 }
 
 
-/* =========================================
+/* BUTTON DISABLED */
+
+.search-button:disabled {
+  background: #9bbdaa;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================================
    NOTE
-   ========================================= */
+   ========================================================= */
 
 .input-note {
   display: block;
 
   margin: 11px 0 0 0;
 
+  padding: 0;
+
   color: #8a94a6;
 
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 
   font-size: 13px;
 
   font-weight: 400;
+
+  font-style: normal;
 
   line-height: 1.5;
 
@@ -289,30 +410,34 @@ body {
 }
 
 
-/* =========================================
+/* =========================================================
    LOADING
-   ========================================= */
+   ========================================================= */
 
 .loading-message {
   display: none;
 
   margin: 12px 0 0 0;
 
+  padding: 0;
+
   color: #00843d;
 
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 
   font-size: 14px;
 
-  font-weight: 600;
+  font-weight: 500;
+
+  line-height: 1.5;
 
   text-align: center;
 }
 
 
-/* =========================================
+/* =========================================================
    ERROR
-   ========================================= */
+   ========================================================= */
 
 .error-message {
   display: none;
@@ -327,7 +452,7 @@ body {
 
   color: #be123c;
 
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 
   font-size: 14px;
 
@@ -339,9 +464,9 @@ body {
 }
 
 
-/* =========================================
-   RESULT
-   ========================================= */
+/* =========================================================
+   RESULT CARD
+   ========================================================= */
 
 .result-card {
   display: none;
@@ -363,19 +488,23 @@ body {
 }
 
 
-/* =========================================
+/* =========================================================
    SUCCESS ICON
-   ========================================= */
+   ========================================================= */
 
 .success-icon {
   display: flex;
 
   width: 52px;
+
   height: 52px;
 
   margin: 0 auto 10px auto;
 
+  padding: 0;
+
   align-items: center;
+
   justify-content: center;
 
   border-radius: 50%;
@@ -384,30 +513,38 @@ body {
 
   color: #00843d;
 
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 
   font-size: 30px;
 
   font-weight: 700;
+
+  font-style: normal;
+
+  line-height: 1;
 }
 
 
-/* =========================================
+/* =========================================================
    RESULT HEADING
-   ========================================= */
+   ========================================================= */
 
 .result-heading {
   display: block;
 
   margin: 0;
 
+  padding: 0;
+
   color: #00843d;
 
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 
   font-size: 24px;
 
   font-weight: 700;
+
+  font-style: normal;
 
   line-height: 1.3;
 
@@ -415,22 +552,26 @@ body {
 }
 
 
-/* =========================================
+/* =========================================================
    RESULT SUBHEADING
-   ========================================= */
+   ========================================================= */
 
 .result-subheading {
   display: block;
 
   margin: 7px 0 22px 0;
 
+  padding: 0;
+
   color: #718096;
 
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 
   font-size: 14px;
 
   font-weight: 400;
+
+  font-style: normal;
 
   line-height: 1.5;
 
@@ -438,20 +579,27 @@ body {
 }
 
 
-/* =========================================
-   STUDENT INFO
-   ========================================= */
+/* =========================================================
+   STUDENT INFORMATION ROW
+   ========================================================= */
 
 .student-info-row {
   display: grid;
 
-  grid-template-columns: 180px minmax(0, 1fr);
+  grid-template-columns:
+    180px
+    minmax(0, 1fr);
 
   width: 100%;
 
   min-height: 49px;
 
-  border-top: 1px solid #e5e7eb;
+  margin: 0;
+
+  padding: 0;
+
+  border-top:
+    1px solid #e5e7eb;
 
   align-items: center;
 
@@ -459,29 +607,41 @@ body {
 }
 
 
+/* =========================================================
+   INFORMATION LABEL
+   ========================================================= */
+
 .student-info-label {
   color: #718096;
 
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 
   font-size: 14px;
 
   font-weight: 400;
 
+  font-style: normal;
+
   line-height: 1.5;
 }
 
+
+/* =========================================================
+   INFORMATION VALUE
+   ========================================================= */
 
 .student-info-value {
   min-width: 0;
 
   color: #111827;
 
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 
   font-size: 15px;
 
-  font-weight: 700;
+  font-weight: 600;
+
+  font-style: normal;
 
   line-height: 1.5;
 
@@ -489,14 +649,15 @@ body {
 }
 
 
-/* =========================================
+/* =========================================================
    STATUS
-   ========================================= */
+   ========================================================= */
 
 .student-status {
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
   padding: 7px 13px;
@@ -507,68 +668,96 @@ body {
 
   color: #087f3b;
 
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
 
   font-size: 13px;
 
   font-weight: 700;
 
+  font-style: normal;
+
   line-height: 1;
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE
-   ========================================= */
+   ========================================================= */
 
 @media screen and (max-width: 600px) {
 
   .page-container {
-    padding: 20px 12px 40px;
+    padding:
+      20px 12px 40px;
   }
+
 
   .ump-logo {
     height: 70px;
+
     max-width: 130px;
+
+    margin-bottom: 7px;
   }
+
 
   .main-heading {
     font-size: 23px;
+
     line-height: 1.2;
   }
+
 
   .page-subtitle {
     font-size: 14px;
   }
 
+
   .search-card {
-    padding: 20px 16px;
+    padding:
+      20px 16px;
+
     border-radius: 16px;
   }
+
 
   .result-card {
-    padding: 23px 16px;
+    padding:
+      23px 16px;
+
     border-radius: 16px;
   }
 
+
   .student-info-row {
-    grid-template-columns: 135px minmax(0, 1fr);
+    grid-template-columns:
+      135px
+      minmax(0, 1fr);
+
     column-gap: 8px;
   }
+
 
   .student-info-label {
     font-size: 13px;
   }
 
+
   .student-info-value {
     font-size: 14px;
   }
 
+
   .result-heading {
     font-size: 22px;
   }
+
 }
 
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
 
 @media screen and (max-width: 390px) {
 
@@ -576,7 +765,11 @@ body {
     font-size: 21px;
   }
 
+
   .student-info-row {
-    grid-template-columns: 120px minmax(0, 1fr);
+    grid-template-columns:
+      120px
+      minmax(0, 1fr);
   }
+
 }
