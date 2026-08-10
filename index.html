@@ -15,15 +15,10 @@
     content="Tra cứu kết quả trúng tuyển 2026"
   >
 
-  <title>
-    Tra cứu kết quả trúng tuyển 2026
-  </title>
+  <title>Tra cứu kết quả trúng tuyển 2026</title>
 
 
-  <!-- =====================================================
-       CSS
-       ===================================================== -->
-
+  <!-- CSS -->
   <link
     rel="stylesheet"
     href="style.css"
@@ -35,21 +30,15 @@
 <body>
 
 
-  <!-- =====================================================
-       MAIN PAGE
-       ===================================================== -->
-
   <div class="page-container">
 
 
-    <!-- ===================================================
+    <!-- =========================================
          HEADER
-         =================================================== -->
+         ========================================= -->
 
     <header class="page-header">
 
-
-      <!-- LOGO -->
 
       <img
         class="ump-logo"
@@ -59,22 +48,23 @@
       >
 
 
-      <!-- MAIN HEADING -->
+      <!--
+        Dùng HTML entities cho các chữ có dấu.
+        Điều này tránh lỗi glyph/combining mark.
+      -->
 
       <div class="main-heading">
 
-        TRA CỨU KẾT QUẢ<br>
+        TRA C&#x1EE8;U K&#x1EBE;T QU&#x1EA2;<br>
 
-        TRÚNG TUYỂN
+        TR&#xDA;NG TUY&#x1EC2;N
 
       </div>
 
 
-      <!-- SUBTITLE -->
-
       <div class="page-subtitle">
 
-        Nhập số CCCD để tra cứu kết quả trúng tuyển.
+        Nh&#x1EAD;p s&#x1ED1; CCCD &#x111;&#x1EC3; tra c&#x1EE9;u k&#x1EBF;t qu&#x1EA3; tr&#xFA;ng tuy&#x1EC3;n.
 
       </div>
 
@@ -83,26 +73,22 @@
 
 
 
-    <!-- ===================================================
-         SEARCH CARD
-         =================================================== -->
+    <!-- =========================================
+         SEARCH
+         ========================================= -->
 
     <section class="search-card">
 
-
-      <!-- LABEL -->
 
       <label
         for="cccd"
         class="cccd-label"
       >
 
-        Số CCCD
+        S&#x1ED1; CCCD
 
       </label>
 
-
-      <!-- INPUT -->
 
       <input
         id="cccd"
@@ -110,12 +96,10 @@
         type="text"
         inputmode="numeric"
         maxlength="12"
-        placeholder="Nhập 12 số CCCD"
+        placeholder="Nh&#x1EAD;p 12 s&#x1ED1; CCCD"
         autocomplete="off"
       >
 
-
-      <!-- BUTTON -->
 
       <button
         id="searchBtn"
@@ -123,33 +107,27 @@
         type="button"
       >
 
-        TRA CỨU KẾT QUẢ
+        TRA C&#x1EEC;U K&#x1EBE;T QU&#x1EA2;
 
       </button>
 
-
-      <!-- LOADING -->
 
       <div
         id="loading"
         class="loading-message"
       >
 
-        Đang tra cứu...
+        &#x110;ang tra c&#x1EE9;u...
 
       </div>
 
-
-      <!-- NOTE -->
 
       <div class="input-note">
 
-        Vui lòng nhập đúng 12 số CCCD.
+        Vui l&#xF2;ng nh&#x1EAD;p &#x111;&#xFA;ng 12 s&#x1ED1; CCCD.
 
       </div>
 
-
-      <!-- ERROR -->
 
       <div
         id="error"
@@ -161,9 +139,9 @@
 
 
 
-    <!-- ===================================================
+    <!-- =========================================
          RESULT
-         =================================================== -->
+         ========================================= -->
 
     <section
       id="resultCard"
@@ -171,46 +149,33 @@
     >
 
 
-      <!-- SUCCESS ICON -->
-
       <div class="success-icon">
-
         ✓
-
       </div>
 
-
-      <!-- RESULT TITLE -->
 
       <div class="result-heading">
 
-        CHÚC MỪNG!
+        CH&#xDA;C M&#x1EEANG!
 
       </div>
 
-
-      <!-- RESULT SUBTITLE -->
 
       <div class="result-subheading">
 
-        Thí sinh đã trúng tuyển.
+        Th&#xED; sinh &#x111;&#xE3; tr&#xFA;ng tuy&#x1EC3;n.
 
       </div>
 
 
-
-      <!-- =================================================
-           HỌ VÀ TÊN
-           ================================================= -->
 
       <div class="student-info-row">
 
         <div class="student-info-label">
 
-          Họ và tên
+          H&#x1ECD; v&#xE0; t&#xEA;n
 
         </div>
-
 
         <div
           id="studentName"
@@ -221,18 +186,13 @@
 
 
 
-      <!-- =================================================
-           SỐ BÁO DANH
-           ================================================= -->
-
       <div class="student-info-row">
 
         <div class="student-info-label">
 
-          Số báo danh
+          S&#x1ED1; b&#xE1;o danh
 
         </div>
-
 
         <div
           id="studentSBD"
@@ -243,18 +203,13 @@
 
 
 
-      <!-- =================================================
-           NGÀY SINH
-           ================================================= -->
-
       <div class="student-info-row">
 
         <div class="student-info-label">
 
-          Ngày sinh
+          Ng&#xE0;y sinh
 
         </div>
-
 
         <div
           id="studentDOB"
@@ -265,18 +220,13 @@
 
 
 
-      <!-- =================================================
-           NGÀNH TRÚNG TUYỂN
-           ================================================= -->
-
       <div class="student-info-row">
 
         <div class="student-info-label">
 
-          Ngành trúng tuyển
+          Ng&#xE0;nh tr&#xFA;ng tuy&#x1EC3;n
 
         </div>
-
 
         <div
           id="studentMajor"
@@ -287,18 +237,13 @@
 
 
 
-      <!-- =================================================
-           NGUYỆN VỌNG TRÚNG TUYỂN
-           ================================================= -->
-
       <div class="student-info-row">
 
         <div class="student-info-label">
 
-          Nguyện vọng trúng tuyển
+          Nguy&#x1EC7;n v&#x1ECD;ng tr&#xFA;ng tuy&#x1EC3;n
 
         </div>
-
 
         <div
           id="studentNV"
@@ -309,18 +254,13 @@
 
 
 
-      <!-- =================================================
-           TRẠNG THÁI
-           ================================================= -->
-
       <div class="student-info-row">
 
         <div class="student-info-label">
 
-          Trạng thái
+          Tr&#x1EA1;ng th&#xE1;i
 
         </div>
-
 
         <div>
 
@@ -341,52 +281,40 @@
 
 
 
-  <!-- =====================================================
+  <!-- =========================================
        JAVASCRIPT
-       ===================================================== -->
+       ========================================= -->
 
   <script>
 
 
-    /* =====================================================
-       GOOGLE APPS SCRIPT WEB APP URL
-       
-       CHỈ SỬA DÒNG NÀY
-       ===================================================== */
+    /*
+     * =====================================================
+     * CHỈ SỬA URL NÀY
+     * =====================================================
+     */
 
     const API_URL =
       "https://script.google.com/macros/s/AKfycby2WIPSceKFSOhsbTgAv5552T6Z7NyY-Eg8dwMr3FfblwmhxWC5GacvorYKPxhQy2s/exec";
 
 
 
-    /* =====================================================
-       GET ELEMENTS
-       ===================================================== */
-
     const cccdInput =
       document.getElementById("cccd");
-
 
     const searchButton =
       document.getElementById("searchBtn");
 
-
     const loadingMessage =
       document.getElementById("loading");
 
-
     const errorMessage =
       document.getElementById("error");
-
 
     const resultCard =
       document.getElementById("resultCard");
 
 
-
-    /* =====================================================
-       SEARCH FUNCTION
-       ===================================================== */
 
     async function searchStudent() {
 
@@ -395,16 +323,12 @@
         cccdInput.value.trim();
 
 
-      /* RESET */
-
       errorMessage.style.display =
         "none";
 
       resultCard.style.display =
         "none";
 
-
-      /* CHECK CCCD */
 
       if (!/^\d{12}$/.test(cccd)) {
 
@@ -416,8 +340,6 @@
       }
 
 
-      /* LOADING */
-
       searchButton.disabled =
         true;
 
@@ -428,21 +350,15 @@
       try {
 
 
-        /* CREATE REQUEST URL */
-
         const requestURL =
           API_URL +
           "?cccd=" +
           encodeURIComponent(cccd);
 
 
-        /* CALL APPS SCRIPT */
-
         const response =
           await fetch(requestURL);
 
-
-        /* CHECK RESPONSE */
 
         if (!response.ok) {
 
@@ -452,8 +368,6 @@
 
         }
 
-
-        /* READ JSON */
 
         const result =
           await response.json();
@@ -465,28 +379,20 @@
         );
 
 
-        /* CHECK SUCCESS */
-
         if (!result.success) {
 
           showError(
             result.message ||
-            "Không tìm thấy thông tin thí sinh."
+            "Không tìm thấy thông tin thí sinh trong DS trúng tuyển."
           );
 
           return;
         }
 
 
-        /* GET STUDENT DATA */
-
         const student =
           result.data;
 
-
-        /* =============================================
-           HỌ TÊN
-           ============================================= */
 
         document.getElementById(
           "studentName"
@@ -494,19 +400,11 @@
           student.hoTen || "";
 
 
-        /* =============================================
-           SỐ BÁO DANH
-           ============================================= */
-
         document.getElementById(
           "studentSBD"
         ).textContent =
           student.sbd || "";
 
-
-        /* =============================================
-           NGÀY SINH
-           ============================================= */
 
         document.getElementById(
           "studentDOB"
@@ -514,29 +412,17 @@
           student.ngaySinh || "";
 
 
-        /* =============================================
-           NGÀNH
-           ============================================= */
-
         document.getElementById(
           "studentMajor"
         ).textContent =
           student.nganh || "";
 
 
-        /* =============================================
-           NGUYỆN VỌNG
-           ============================================= */
-
         document.getElementById(
           "studentNV"
         ).textContent =
           student.nv || "";
 
-
-        /* =============================================
-           TRẠNG THÁI
-           ============================================= */
 
         document.getElementById(
           "studentStatus"
@@ -545,13 +431,9 @@
           "TRÚNG TUYỂN";
 
 
-        /* SHOW RESULT */
-
         resultCard.style.display =
           "block";
 
-
-        /* SCROLL TO RESULT */
 
         setTimeout(
           function () {
@@ -567,23 +449,17 @@
 
 
       }
-
-
       catch (error) {
 
         console.error(
-          "Lỗi:",
           error
         );
-
 
         showError(
           "Có lỗi xảy ra khi tra cứu. Vui lòng thử lại."
         );
 
       }
-
-
       finally {
 
         searchButton.disabled =
@@ -598,10 +474,6 @@
 
 
 
-    /* =====================================================
-       ERROR MESSAGE
-       ===================================================== */
-
     function showError(message) {
 
       errorMessage.textContent =
@@ -613,10 +485,6 @@
     }
 
 
-
-    /* =====================================================
-       ONLY ALLOW NUMBERS
-       ===================================================== */
 
     cccdInput.addEventListener(
       "input",
@@ -630,11 +498,6 @@
       }
     );
 
-
-
-    /* =====================================================
-       ENTER TO SEARCH
-       ===================================================== */
 
     cccdInput.addEventListener(
       "keydown",
@@ -651,11 +514,6 @@
       }
     );
 
-
-
-    /* =====================================================
-       BUTTON CLICK
-       ===================================================== */
 
     searchButton.addEventListener(
       "click",
