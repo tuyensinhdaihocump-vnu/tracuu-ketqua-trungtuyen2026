@@ -3,7 +3,7 @@
 ========================================== */
 
 const API_URL =
-    "https://script.google.com/macros/s/AKfycby2WIPSceKFSOhsbTgAv5552T6Z7NyY-Eg8dwMr3FfblwmhxWC5GacvorYKPxhQy2s/exec";
+    "https://script.google.com/macros/s/AKfycbx1CNjdO_zLH8Xr4Jw7gD26vS2J3NoRYCEu1s5piPh0QFZ7FAJfTrndcu9fnPg1Ji4/exec";
 
 
 /* ==========================================
@@ -56,8 +56,26 @@ const studentStatus =
     document.getElementById("studentStatus");
 
 
+/* GIẤY BÁO */
+
+const letterSection =
+    document.getElementById("letterSection");
+
+const letterMessage =
+    document.getElementById("letterMessage");
+
+const letterButtons =
+    document.getElementById("letterButtons");
+
+const viewLetterBtn =
+    document.getElementById("viewLetterBtn");
+
+const downloadLetterBtn =
+    document.getElementById("downloadLetterBtn");
+
+
 /* ==========================================
-   SHOW MESSAGE
+   MESSAGE
 ========================================== */
 
 function showMessage(text) {
@@ -74,10 +92,6 @@ function showMessage(text) {
 }
 
 
-/* ==========================================
-   HIDE MESSAGE
-========================================== */
-
 function hideMessage() {
 
     message.hidden =
@@ -87,13 +101,37 @@ function hideMessage() {
 
 
 /* ==========================================
-   HIDE RESULT
+   RESULT
 ========================================== */
 
 function hideResult() {
 
     resultCard.hidden =
         true;
+
+}
+
+
+/* ==========================================
+   LETTER RESET
+========================================== */
+
+function resetLetter() {
+
+    letterSection.hidden =
+        true;
+
+    letterButtons.hidden =
+        true;
+
+    letterMessage.textContent =
+        "";
+
+    viewLetterBtn.href =
+        "#";
+
+    downloadLetterBtn.href =
+        "#";
 
 }
 
@@ -140,109 +178,105 @@ function cleanCCCD(
 
 
 /* ==========================================
-   DISPLAY RESULT
+   SHOW RESULT
 ========================================== */
 
 function showResult(
     data
 ) {
 
-
     hideMessage();
-
 
     resultCard.hidden =
         false;
 
 
-    resultCard.className =
-        "result-card result-pass";
-
-
-    /* --------------------------------------
-       ICON
-    -------------------------------------- */
-
-    resultIcon.textContent =
-        "✓";
-
-
-    /* --------------------------------------
-       TITLE
-    -------------------------------------- */
-
-    resultTitle.textContent =
-        "CHÚC MỪNG!";
-
-
-    /* --------------------------------------
-       DESCRIPTION
-    -------------------------------------- */
-
-    resultDescription.textContent =
-        "Thí sinh đã trúng tuyển.";
-
-
-    /* --------------------------------------
-       HỌ TÊN
-    -------------------------------------- */
+    /* THÔNG TIN */
 
     studentName.textContent =
         data.name || "—";
 
 
-    /* --------------------------------------
-       SỐ BÁO DANH
-    -------------------------------------- */
-
     studentSBD.textContent =
         data.sbd || "—";
 
-
-    /* --------------------------------------
-       NGÀY SINH
-    -------------------------------------- */
 
     studentDob.textContent =
         data.dob || "—";
 
 
-    /* --------------------------------------
-       NGÀNH TRÚNG TUYỂN
-    -------------------------------------- */
-
     studentMajor.textContent =
         data.major || "—";
 
-
-    /* --------------------------------------
-       NGUYỆN VỌNG TRÚNG TUYỂN
-    -------------------------------------- */
 
     studentNV.textContent =
         data.nv || "—";
 
 
-    /* --------------------------------------
-       TRẠNG THÁI
-    -------------------------------------- */
-
     studentStatus.textContent =
         "TRÚNG TUYỂN";
+
+
+    /* HEADER */
+
+    resultIcon.textContent =
+        "✓";
+
+    resultTitle.textContent =
+        "CHÚC MỪNG!";
+
+    resultDescription.textContent =
+        "Thí sinh đã trúng tuyển.";
+
+
+    /* GIẤY BÁO */
+
+    resetLetter();
+
+
+    letterSection.hidden =
+        false;
+
+
+    if (
+        data.letterFound &&
+        data.letterUrl
+    ) {
+
+        letterMessage.textContent =
+            "Giấy báo trúng tuyển đã được cập nhật.";
+
+
+        letterButtons.hidden =
+            false;
+
+
+        viewLetterBtn.href =
+            data.letterUrl;
+
+
+        downloadLetterBtn.href =
+            data.letterDownloadUrl;
+
+
+    }
+
+    else {
+
+        letterMessage.textContent =
+            "Giấy báo trúng tuyển đang được cập nhật. Vui lòng quay lại sau.";
+
+    }
 
 }
 
 
 /* ==========================================
-   SEARCH ADMISSION
+   SEARCH
 ========================================== */
 
 async function searchAdmission() {
 
-
-    /* --------------------------------------
-       LẤY CCCD
-    -------------------------------------- */
 
     const cccd =
         cleanCCCD(
@@ -258,9 +292,11 @@ async function searchAdmission() {
 
     hideResult();
 
+    resetLetter();
+
 
     /* --------------------------------------
-       KIỂM TRA RỖNG
+       EMPTY
     -------------------------------------- */
 
     if (!cccd) {
@@ -277,7 +313,7 @@ async function searchAdmission() {
 
 
     /* --------------------------------------
-       KIỂM TRA 12 SỐ
+       12 DIGITS
     -------------------------------------- */
 
     if (
@@ -295,10 +331,6 @@ async function searchAdmission() {
     }
 
 
-    /* --------------------------------------
-       LOADING
-    -------------------------------------- */
-
     setLoading(
         true
     );
@@ -306,10 +338,6 @@ async function searchAdmission() {
 
     try {
 
-
-        /* ----------------------------------
-           API URL
-        ---------------------------------- */
 
         const url =
             API_URL +
@@ -319,24 +347,15 @@ async function searchAdmission() {
             );
 
 
-        /* ----------------------------------
-           CALL API
-        ---------------------------------- */
-
         const response =
             await fetch(
                 url,
                 {
                     method: "GET",
-
                     cache: "no-store"
                 }
             );
 
-
-        /* ----------------------------------
-           RESPONSE ERROR
-        ---------------------------------- */
 
         if (
             !response.ok
@@ -348,10 +367,6 @@ async function searchAdmission() {
 
         }
 
-
-        /* ----------------------------------
-           JSON
-        ---------------------------------- */
 
         const result =
             await response.json();
@@ -376,7 +391,7 @@ async function searchAdmission() {
 
 
         /* ----------------------------------
-           CCCD KHÔNG CÓ TRONG DANH SÁCH
+           KHÔNG CÓ CCCD
         ---------------------------------- */
 
         if (
@@ -393,8 +408,7 @@ async function searchAdmission() {
 
 
         /* ----------------------------------
-           CCCD CÓ TRONG DANH SÁCH
-           → TRÚNG TUYỂN
+           CÓ CCCD
         ---------------------------------- */
 
         showResult(
@@ -404,9 +418,7 @@ async function searchAdmission() {
 
     }
 
-
     catch (error) {
-
 
         console.error(
             error
@@ -417,9 +429,7 @@ async function searchAdmission() {
             "Không thể kết nối đến hệ thống tra cứu. Vui lòng thử lại sau."
         );
 
-
     }
-
 
     finally {
 
@@ -433,7 +443,7 @@ async function searchAdmission() {
 
 
 /* ==========================================
-   INPUT EVENT
+   INPUT
 ========================================== */
 
 cccdInput.addEventListener(
@@ -450,7 +460,7 @@ cccdInput.addEventListener(
 
 
 /* ==========================================
-   ENTER KEY
+   ENTER
 ========================================== */
 
 cccdInput.addEventListener(
