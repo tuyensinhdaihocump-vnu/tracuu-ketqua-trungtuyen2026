@@ -1,914 +1,764 @@
-/* =========================================================
-   UMP - TRA CỨU KẾT QUẢ TRÚNG TUYỂN 2026
-   FONT: ROBOTO
-   ========================================================= */
-
-
-/* =========================================================
-   ROBOTO - SUPPORT VIETNAMESE
-   ========================================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800&display=swap');
-
-
-/* =========================================================
-   RESET
-   ========================================================= */
+/* ==================================================
+   GLOBAL
+================================================== */
 
 * {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  min-height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 
-/* =========================================================
-   GLOBAL FONT
-   ========================================================= */
-
-body,
-div,
-span,
-label,
-input,
-button,
-section,
-header,
-main,
-p {
-  font-family: "Roboto", Arial, sans-serif;
+html {
+    scroll-behavior: smooth;
 }
 
-
-/* =========================================================
-   BODY
-   ========================================================= */
 
 body {
-  background: #f3f6fa;
 
-  color: #1f2937;
+    background: #f4f7fb;
 
-  font-family: "Roboto", Arial, sans-serif;
+    font-family:
+        "Be Vietnam Pro",
+        sans-serif;
 
-  font-size: 16px;
+    color: #263238;
 
-  font-weight: 400;
+    font-size: 15px;
 
-  font-style: normal;
+    line-height: 1.6;
 
-  line-height: 1.5;
+    min-height: 100vh;
 
-  min-height: 100vh;
-
-  -webkit-font-smoothing: antialiased;
-
-  -moz-osx-font-smoothing: grayscale;
 }
 
 
-/* =========================================================
-   MAIN CONTAINER
-   ========================================================= */
+/* ==================================================
+   PAGE
+================================================== */
 
-.page-container {
-  width: 100%;
+.page {
 
-  max-width: 760px;
+    width: 100%;
 
-  margin: 0 auto;
+    max-width: 760px;
 
-  padding: 24px 18px 50px;
+    margin: 0 auto;
+
+    padding:
+        42px 20px
+        30px;
+
 }
 
 
-/* =========================================================
+/* ==================================================
    HEADER
-   ========================================================= */
+================================================== */
 
-.page-header {
-  width: 100%;
-
-  margin: 0 0 22px 0;
-
-  padding: 0;
-
-  text-align: center;
-}
-
-
-/* =========================================================
-   LOGO
-   ========================================================= */
-
-.ump-logo {
-  display: block;
-
-  width: auto;
-
-  max-width: 150px;
-
-  height: 82px;
-
-  margin: 0 auto 8px auto;
-
-  padding: 0;
-
-  object-fit: contain;
-}
-
-
-/* =========================================================
-   MAIN HEADING
-   ========================================================= */
-
-.main-heading {
-  display: block;
-
-  width: 100%;
-
-  margin: 0;
-
-  padding: 0;
-
-  color: #00843d;
-
-  font-family: "Roboto", Arial, sans-serif;
-
-  font-size: 28px;
-
-  font-weight: 700;
-
-  font-style: normal;
-
-  font-variant: normal;
-
-  line-height: 1.18;
-
-  letter-spacing: 0;
-
-  text-align: center;
-
-  text-transform: uppercase;
-
-  text-decoration: none;
-
-  text-shadow: none;
-}
-
-
-/* =========================================================
-   SUBTITLE
-   ========================================================= */
-
-.page-subtitle {
-  display: block;
-
-  margin: 10px 0 0 0;
-
-  padding: 0;
-
-  color: #718096;
-
-  font-family: "Roboto", Arial, sans-serif;
-
-  font-size: 15px;
-
-  font-weight: 400;
-
-  font-style: normal;
-
-  line-height: 1.5;
-
-  text-align: center;
-}
-
-
-/* =========================================================
-   SEARCH CARD
-   ========================================================= */
-
-.search-card {
-  width: 100%;
-
-  margin: 0 0 20px 0;
-
-  padding: 26px;
-
-  background: #ffffff;
-
-  border-radius: 18px;
-
-  box-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.06);
-}
-
-
-/* =========================================================
-   LABEL
-   ========================================================= */
-
-.cccd-label {
-  display: block;
-
-  margin: 0 0 9px 0;
-
-  padding: 0;
-
-  color: #374151;
-
-  font-family: "Roboto", Arial, sans-serif;
-
-  font-size: 15px;
-
-  font-weight: 500;
-
-  font-style: normal;
-
-  line-height: 1.5;
-}
-
-
-/* =========================================================
-   INPUT
-   ========================================================= */
-
-.cccd-input {
-  display: block;
-
-  width: 100%;
-
-  height: 50px;
-
-  margin: 0;
-
-  padding: 0 15px;
-
-  border: 1px solid #d8dee8;
-
-  border-radius: 12px;
-
-  outline: none;
-
-  background: #ffffff;
-
-  color: #111827;
-
-  font-family: "Roboto", Arial, sans-serif;
-
-  font-size: 16px;
-
-  font-weight: 400;
-
-  font-style: normal;
-
-  line-height: 50px;
-
-  appearance: none;
-
-  -webkit-appearance: none;
-
-  transition:
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-
-/* =========================================================
-   INPUT PLACEHOLDER
-   ========================================================= */
-
-.cccd-input::placeholder {
-  color: #9ca3af;
-
-  font-family: "Roboto", Arial, sans-serif;
-
-  font-size: 16px;
-
-  font-weight: 400;
-
-  opacity: 1;
-}
-
-
-/* =========================================================
-   INPUT FOCUS
-   ========================================================= */
-
-.cccd-input:focus {
-  border-color: #00843d;
-
-  box-shadow:
-    0 0 0 3px rgba(0, 132, 61, 0.10);
-}
-
-
-/* =========================================================
-   SEARCH BUTTON
-   ========================================================= */
-
-.search-button {
-  display: block;
-
-  width: 100%;
-
-  height: 50px;
-
-  margin: 14px 0 0 0;
-
-  padding: 0;
-
-  border: none;
-
-  border-radius: 11px;
-
-  outline: none;
-
-  background: #00843d;
-
-  color: #ffffff;
-
-  font-family: "Roboto", Arial, sans-serif;
-
-  font-size: 15px;
-
-  font-weight: 700;
-
-  font-style: normal;
-
-  line-height: 50px;
-
-  text-align: center;
-
-  cursor: pointer;
-
-  appearance: none;
-
-  -webkit-appearance: none;
-
-  transition:
-    background 0.2s ease,
-    transform 0.1s ease;
-}
-
-
-/* BUTTON HOVER */
-
-.search-button:hover {
-  background: #006f34;
-}
-
-
-/* BUTTON ACTIVE */
-
-.search-button:active {
-  transform: scale(0.99);
-}
-
-
-/* BUTTON DISABLED */
-
-.search-button:disabled {
-  background: #9bbdaa;
-
-  cursor: not-allowed;
-
-  transform: none;
-}
-
-
-/* =========================================================
-   NOTE
-   ========================================================= */
-
-.input-note {
-  display: block;
-
-  margin: 11px 0 0 0;
-
-  padding: 0;
-
-  color: #8a94a6;
-
-  font-family: "Roboto", Arial, sans-serif;
-
-  font-size: 13px;
-
-  font-weight: 400;
-
-  font-style: normal;
-
-  line-height: 1.5;
-
-  text-align: center;
-}
-
-
-/* =========================================================
-   LOADING
-   ========================================================= */
-
-.loading-message {
-  display: none;
-
-  margin: 12px 0 0 0;
-
-  padding: 0;
-
-  color: #00843d;
-
-  font-family: "Roboto", Arial, sans-serif;
-
-  font-size: 14px;
-
-  font-weight: 500;
-
-  line-height: 1.5;
-
-  text-align: center;
-}
-
-
-/* =========================================================
-   ERROR
-   ========================================================= */
-
-.error-message {
-  display: none;
-
-  margin: 14px 0 0 0;
-
-  padding: 12px 15px;
-
-  border-radius: 10px;
-
-  background: #fff1f2;
-
-  color: #be123c;
-
-  font-family: "Roboto", Arial, sans-serif;
-
-  font-size: 14px;
-
-  font-weight: 400;
-
-  line-height: 1.5;
-
-  text-align: center;
-}
-
-
-/* =========================================================
-   RESULT CARD
-   ========================================================= */
-
-.result-card {
-  display: none;
-
-  width: 100%;
-
-  margin: 0;
-
-  padding: 28px 24px;
-
-  background: #ffffff;
-
-  border-top: 4px solid #00843d;
-
-  border-radius: 18px;
-
-  box-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.06);
-}
-
-
-/* =========================================================
-   SUCCESS ICON
-   ========================================================= */
-
-.success-icon {
-  display: flex;
-
-  width: 52px;
-
-  height: 52px;
-
-  margin: 0 auto 10px auto;
-
-  padding: 0;
-
-  align-items: center;
-
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: #dcfce7;
-
-  color: #00843d;
-
-  font-family: "Roboto", Arial, sans-serif;
-
-  font-size: 30px;
-
-  font-weight: 700;
-
-  font-style: normal;
-
-  line-height: 1;
-}
-
-
-/* =========================================================
-   RESULT HEADING
-   ========================================================= */
-
-.result-heading {
-  display: block;
-
-  margin: 0;
-
-  padding: 0;
-
-  color: #00843d;
-
-  font-family: "Roboto", Arial, sans-serif;
-
-  font-size: 24px;
-
-  font-weight: 700;
-
-  font-style: normal;
-
-  line-height: 1.3;
-
-  text-align: center;
-}
-
-
-/* =========================================================
-   RESULT SUBHEADING
-   ========================================================= */
-
-.result-subheading {
-  display: block;
-
-  margin: 7px 0 22px 0;
-
-  padding: 0;
-
-  color: #718096;
-
-  font-family: "Roboto", Arial, sans-serif;
-
-  font-size: 14px;
-
-  font-weight: 400;
-
-  font-style: normal;
-
-  line-height: 1.5;
-
-  text-align: center;
-}
-
-
-/* =========================================================
-   STUDENT INFORMATION ROW
-   ========================================================= */
-
-.student-info-row {
-  display: grid;
-
-  grid-template-columns:
-    180px
-    minmax(0, 1fr);
-
-  width: 100%;
-
-  min-height: 49px;
-
-  margin: 0;
-
-  padding: 0;
-
-  border-top:
-    1px solid #e5e7eb;
-
-  align-items: center;
-
-  column-gap: 10px;
-}
-
-
-/* =========================================================
-   INFORMATION LABEL
-   ========================================================= */
-
-.student-info-label {
-  color: #718096;
-
-  font-family: "Roboto", Arial, sans-serif;
-
-  font-size: 14px;
-
-  font-weight: 400;
-
-  font-style: normal;
-
-  line-height: 1.5;
-}
-
-
-/* =========================================================
-   INFORMATION VALUE
-   ========================================================= */
-
-.student-info-value {
-  min-width: 0;
-
-  color: #111827;
-
-  font-family: "Roboto", Arial, sans-serif;
-
-  font-size: 15px;
-
-  font-weight: 600;
-
-  font-style: normal;
-
-  line-height: 1.5;
-
-  word-break: break-word;
-}
-
-
-/* =========================================================
-   STATUS
-   ========================================================= */
-
-.student-status {
-  display: inline-flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  padding: 7px 13px;
-
-  border-radius: 20px;
-
-  background: #dcfce7;
-
-  color: #087f3b;
-
-  font-family: "Roboto", Arial, sans-serif;
-
-  font-size: 13px;
-
-  font-weight: 700;
-
-  font-style: normal;
-
-  line-height: 1;
-}
-
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media screen and (max-width: 600px) {
-
-  .page-container {
-    padding:
-      20px 12px 40px;
-  }
-
-
-  .ump-logo {
-    height: 70px;
-
-    max-width: 130px;
-
-    margin-bottom: 7px;
-  }
-
-
-  .main-heading {
-    font-size: 23px;
-
-    line-height: 1.2;
-  }
-
-
-  .page-subtitle {
-    font-size: 14px;
-  }
-
-
-  .search-card {
-    padding:
-      20px 16px;
-
-    border-radius: 16px;
-  }
-
-
-  .result-card {
-    padding:
-      23px 16px;
-
-    border-radius: 16px;
-  }
-
-
-  .student-info-row {
-    grid-template-columns:
-      135px
-      minmax(0, 1fr);
-
-    column-gap: 8px;
-  }
-
-
-  .student-info-label {
-    font-size: 13px;
-  }
-
-
-  .student-info-value {
-    font-size: 14px;
-  }
-
-
-  .result-heading {
-    font-size: 22px;
-  }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-   ========================================================= */
-
-@media screen and (max-width: 390px) {
-
-  .main-heading {
-    font-size: 21px;
-  }
-
-
-  .student-info-row {
-    grid-template-columns:
-      120px
-      minmax(0, 1fr);
-  }
-
-}
-/* ==========================================
-   ADMISSION LETTER
-========================================== */
-
-.letter-section {
-
-    margin-top: 22px;
-
-    padding-top: 20px;
-
-    border-top:
-        1px solid #E5E7EB;
+.header {
 
     text-align: center;
 
+    margin-bottom: 28px;
+
 }
 
 
-.letter-title {
+.logo {
 
-    color: var(--ump-green);
+    width: 78px;
+
+    height: 78px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin:
+        0 auto
+        12px;
+
+}
+
+
+.header h1 {
+
+    color: #00843d;
+
+    font-size: 29px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    letter-spacing: -0.5px;
+
+}
+
+
+.subtitle {
+
+    margin-top: 12px;
+
+    color: #718096;
+
+    font-size: 14px;
+
+}
+
+
+/* ==================================================
+   LOOKUP CARD
+================================================== */
+
+.lookup-card {
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    padding:
+        24px 24px
+        22px;
+
+    box-shadow:
+        0 8px 28px
+        rgba(28, 50, 80, 0.08);
+
+}
+
+
+.form-label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 700;
+
+    color: #263238;
+
+}
+
+
+.cccd-input {
+
+    width: 100%;
+
+    height: 48px;
+
+    border:
+        1px solid #d5dee8;
+
+    border-radius: 10px;
+
+    padding:
+        0 14px;
+
+    font-family: inherit;
 
     font-size: 15px;
+
+    color: #263238;
+
+    background: #fff;
+
+    outline: none;
+
+    transition:
+        border-color .2s,
+        box-shadow .2s;
+
+}
+
+
+.cccd-input:focus {
+
+    border-color: #00843d;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(0, 132, 61, 0.10);
+
+}
+
+
+.lookup-button {
+
+    width: 100%;
+
+    height: 48px;
+
+    margin-top: 13px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #008f45;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background .2s,
+        transform .1s;
+
+}
+
+
+.lookup-button:hover {
+
+    background: #007b3b;
+
+}
+
+
+.lookup-button:active {
+
+    transform: scale(.99);
+
+}
+
+
+.lookup-button:disabled {
+
+    background: #62b48a;
+
+    cursor: wait;
+
+}
+
+
+.form-note {
+
+    text-align: center;
+
+    margin-top: 9px;
+
+    color: #8795a5;
+
+    font-size: 12px;
+
+}
+
+
+/* ==================================================
+   MESSAGE
+================================================== */
+
+.message {
+
+    display: none;
+
+    margin-top: 14px;
+
+    padding:
+        12px 16px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    font-size: 13px;
+
+}
+
+
+.message.error {
+
+    display: block;
+
+    color: #d92d20;
+
+    background: #fff5f5;
+
+    border:
+        1px solid #ffcaca;
+
+}
+
+
+.message.success {
+
+    display: block;
+
+    color: #087443;
+
+    background: #f0fff7;
+
+    border:
+        1px solid #b9efd0;
+
+}
+
+
+/* ==================================================
+   RESULT
+================================================== */
+
+.result-container {
+
+    margin-top: 14px;
+
+}
+
+
+.hidden {
+
+    display: none;
+
+}
+
+
+.result-card {
+
+    background: white;
+
+    border-radius: 16px;
+
+    border-top:
+        4px solid #008f45;
+
+    padding:
+        24px 24px
+        22px;
+
+    box-shadow:
+        0 8px 28px
+        rgba(28, 50, 80, 0.08);
+
+}
+
+
+.success-icon {
+
+    width: 50px;
+
+    height: 50px;
+
+    margin: 0 auto 10px;
+
+    border-radius: 50%;
+
+    background: #ddfae9;
+
+    color: #008f45;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+}
+
+
+.result-card h2 {
+
+    text-align: center;
+
+    color: #00843d;
+
+    font-size: 23px;
+
+    line-height: 1.2;
+
+}
+
+
+.result-subtitle {
+
+    text-align: center;
+
+    color: #718096;
+
+    margin-top: 4px;
+
+    font-size: 13px;
+
+}
+
+
+/* ==================================================
+   STUDENT INFORMATION
+================================================== */
+
+.student-info {
+
+    margin-top: 20px;
+
+}
+
+
+.info-row {
+
+    display: grid;
+
+    grid-template-columns:
+        180px 1fr;
+
+    gap: 20px;
+
+    min-height: 46px;
+
+    align-items: center;
+
+    border-top:
+        1px solid #e8edf2;
+
+}
+
+
+.info-row span:first-child {
+
+    color: #64748b;
+
+    font-weight: 500;
+
+}
+
+
+.info-row strong {
+
+    color: #17202a;
+
+    font-weight: 700;
+
+}
+
+
+.status-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        5px 11px;
+
+    border-radius: 999px;
+
+    background: #ddfae9;
+
+    color: #087443;
+
+    font-size: 11px;
 
     font-weight: 800;
 
 }
 
 
-.letter-message {
+/* ==================================================
+   DOCUMENT SECTION
+================================================== */
 
-    margin-top: 6px;
+.document-section {
 
-    color: var(--muted);
+    margin-top: 22px;
 
-    font-size: 13px;
+    padding-top: 20px;
+
+    border-top:
+        1px solid #e5ebf0;
 
 }
 
 
-.letter-buttons {
+.document-title {
 
     display: flex;
 
-    justify-content: center;
+    align-items: center;
 
-    gap: 10px;
-
-    margin-top: 15px;
-
-    flex-wrap: wrap;
+    gap: 12px;
 
 }
 
 
-.letter-btn {
+.document-icon {
 
-    display: inline-flex;
+    width: 42px;
+
+    height: 42px;
+
+    border-radius: 9px;
+
+    background: #fff0ed;
+
+    color: #df3d2f;
+
+    display: flex;
 
     align-items: center;
 
     justify-content: center;
 
-    min-width: 150px;
+    font-size: 11px;
 
-    min-height: 42px;
+    font-weight: 800;
 
-    padding:
-        9px 16px;
+    flex-shrink: 0;
+
+}
+
+
+.document-title strong {
+
+    display: block;
+
+    color: #263238;
+
+    font-size: 14px;
+
+}
+
+
+.document-title small {
+
+    display: block;
+
+    color: #8a96a3;
+
+    font-size: 11px;
+
+    margin-top: 2px;
+
+}
+
+
+/* ==================================================
+   DOCUMENT BUTTONS
+================================================== */
+
+.document-buttons {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 14px;
+
+}
+
+
+.document-button {
+
+    min-height: 44px;
 
     border-radius: 9px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
 
     text-decoration: none;
 
     font-family: inherit;
 
-    font-size: 13px;
+    font-size: 12px;
 
-    font-weight: 700;
+    font-weight: 800;
 
     transition:
-        0.2s ease;
+        transform .15s,
+        background .2s;
 
 }
 
 
-.view-btn {
+.document-button:hover {
 
-    background:
-        var(--ump-green);
-
-    color: #FFFFFF;
+    transform: translateY(-1px);
 
 }
 
 
-.view-btn:hover {
+.view-button {
 
-    background:
-        var(--ump-green-dark);
+    background: #eef8f2;
 
-}
-
-
-.download-btn {
-
-    background: #F0FDF4;
-
-    color:
-        var(--ump-green);
+    color: #00843d;
 
     border:
-        1px solid #BBF7D0;
+        1px solid #bce5cd;
 
 }
 
 
-.download-btn:hover {
+.view-button:hover {
 
-    background: #DCFCE7;
+    background: #e1f3e9;
 
 }
 
 
-@media (max-width: 600px) {
+.download-button {
 
-    .letter-buttons {
+    background: #008f45;
 
-        flex-direction: column;
+    color: white;
+
+    border:
+        1px solid #008f45;
+
+}
+
+
+.download-button:hover {
+
+    background: #007c3b;
+
+}
+
+
+.button-icon {
+
+    font-size: 17px;
+
+    line-height: 1;
+
+}
+
+
+.document-unavailable {
+
+    background: #fafafa;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: #8a96a3;
+
+    font-size: 11px;
+
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (
+    max-width: 600px
+) {
+
+    .page {
+
+        padding:
+            28px 14px
+            24px;
 
     }
 
 
-    .letter-btn {
+    .logo {
 
-        width: 100%;
+        width: 68px;
+
+        height: 68px;
+
+    }
+
+
+    .header h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .lookup-card {
+
+        padding:
+            20px 16px;
+
+    }
+
+
+    .result-card {
+
+        padding:
+            20px 16px;
+
+    }
+
+
+    .info-row {
+
+        grid-template-columns:
+            125px 1fr;
+
+        gap: 10px;
+
+        font-size: 13px;
+
+    }
+
+
+    .document-buttons {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+/* ==================================================
+   VERY SMALL MOBILE
+================================================== */
+
+@media (
+    max-width: 380px
+) {
+
+    .info-row {
+
+        grid-template-columns:
+            110px 1fr;
+
+    }
+
+
+    .header h1 {
+
+        font-size: 22px;
 
     }
 
