@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="vi">
 
 <head>
@@ -10,7 +11,12 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>Tra cứu kết quả trúng tuyển</title>
+    <title>
+        Tra cứu kết quả trúng tuyển 2026
+    </title>
+
+
+    <!-- Google Font -->
 
     <link
         rel="preconnect"
@@ -28,6 +34,9 @@
         rel="stylesheet"
     >
 
+
+    <!-- CSS -->
+
     <link
         rel="stylesheet"
         href="style.css"
@@ -39,296 +48,127 @@
 <body>
 
 
-<div class="page">
+    <main class="page">
 
 
-<main class="container">
+        <!-- ======================================
+             HEADER
+        ======================================= -->
 
+        <section class="header">
 
-    <!-- LOGO -->
-
-    <div class="logo-wrap">
-
-        <img
-            src="logo.png"
-            alt="Trường Đại học Y Dược - Đại học Quốc gia Hà Nội"
-            class="logo"
-        >
-
-    </div>
-
-
-    <!-- HEADER -->
-
-    <section class="hero">
-
-        <h1>
-            TRA CỨU KẾT QUẢ<br>
-            TRÚNG TUYỂN
-        </h1>
-
-        <p class="subtitle">
-            Nhập số CCCD để tra cứu kết quả trúng tuyển.
-        </p>
-
-    </section>
-
-
-    <!-- SEARCH -->
-
-    <section class="search-card">
-
-        <label for="cccd">
-            Số CCCD
-        </label>
-
-        <div class="input-wrap">
-
-            <input
-                type="text"
-                id="cccd"
-                inputmode="numeric"
-                maxlength="12"
-                autocomplete="off"
-                placeholder="Nhập số CCCD"
+            <img
+                src="logo.png"
+                alt="Logo Trường Đại học Y Dược"
+                class="logo"
             >
 
-        </div>
+
+            <h1>
+                TRA CỨU KẾT QUẢ<br>
+                TRÚNG TUYỂN
+            </h1>
 
 
-        <button
-            id="searchBtn"
-            type="button"
-        >
+            <p class="subtitle">
+                Nhập số CCCD để tra cứu kết quả trúng tuyển.
+            </p>
 
-            <span id="buttonText">
-                TRA CỨU KẾT QUẢ
-            </span>
-
-            <span
-                id="buttonLoading"
-                hidden
-            >
-                ĐANG TRA CỨU...
-            </span>
-
-        </button>
+        </section>
 
 
-        <p class="hint">
-            Vui lòng nhập đúng 12 số CCCD.
-        </p>
 
-    </section>
+        <!-- ======================================
+             FORM TRA CỨU
+        ======================================= -->
 
+        <section class="lookup-card">
 
-    <!-- MESSAGE -->
-
-    <div
-        id="message"
-        class="message"
-        role="alert"
-        hidden
-    ></div>
+            <form id="lookupForm">
 
 
-    <!-- RESULT -->
-
-    <section
-        id="resultCard"
-        class="result-card result-pass"
-        hidden
-    >
-
-
-        <div
-            id="resultIcon"
-            class="result-icon"
-        >
-            ✓
-        </div>
-
-
-        <div
-            id="resultTitle"
-            class="result-title"
-        >
-            CHÚC MỪNG!
-        </div>
-
-
-        <div
-            id="resultDescription"
-            class="result-description"
-        >
-            Thí sinh đã trúng tuyển.
-        </div>
-
-
-        <!-- THÔNG TIN -->
-
-        <div class="student-info">
-
-
-            <div class="info-row">
-
-                <div class="info-label">
-                    Họ và tên
-                </div>
-
-                <div
-                    id="studentName"
-                    class="info-value"
-                ></div>
-
-            </div>
-
-
-            <div class="info-row">
-
-                <div class="info-label">
-                    Số báo danh
-                </div>
-
-                <div
-                    id="studentSBD"
-                    class="info-value"
-                ></div>
-
-            </div>
-
-
-            <div class="info-row">
-
-                <div class="info-label">
-                    Ngày sinh
-                </div>
-
-                <div
-                    id="studentDob"
-                    class="info-value"
-                ></div>
-
-            </div>
-
-
-            <div class="info-row">
-
-                <div class="info-label">
-                    Ngành trúng tuyển
-                </div>
-
-                <div
-                    id="studentMajor"
-                    class="info-value"
-                ></div>
-
-            </div>
-
-
-            <div class="info-row">
-
-                <div class="info-label">
-                    Nguyện vọng trúng tuyển
-                </div>
-
-                <div
-                    id="studentNV"
-                    class="info-value"
-                ></div>
-
-            </div>
-
-
-            <div class="status-row">
-
-                <div class="info-label">
-                    Trạng thái
-                </div>
-
-                <div
-                    id="studentStatus"
-                    class="status-badge"
+                <label
+                    for="cccd"
+                    class="form-label"
                 >
-                    TRÚNG TUYỂN
-                </div>
-
-            </div>
+                    Số CCCD
+                </label>
 
 
-        </div>
+                <input
+                    id="cccd"
+                    name="cccd"
+                    type="text"
+                    inputmode="numeric"
+                    maxlength="12"
+                    autocomplete="off"
+                    placeholder="Nhập số CCCD"
+                    class="cccd-input"
+                >
 
 
-        <!-- GIẤY BÁO -->
+                <button
+                    id="lookupButton"
+                    type="submit"
+                    class="lookup-button"
+                >
+                    TRA CỨU KẾT QUẢ
+                </button>
+
+
+                <p class="form-note">
+                    Vui lòng nhập đúng 12 số CCCD.
+                </p>
+
+
+            </form>
+
+        </section>
+
+
+
+        <!-- ======================================
+             MESSAGE
+        ======================================= -->
 
         <div
-            id="letterSection"
-            class="letter-section"
-            hidden
-        >
-
-            <div class="letter-title">
-
-                📄 GIẤY BÁO TRÚNG TUYỂN
-
-            </div>
+            id="message"
+            class="message"
+        ></div>
 
 
-            <p
-                id="letterMessage"
-                class="letter-message"
-            ></p>
+
+        <!-- ======================================
+             RESULT
+        ======================================= -->
+
+        <section
+            id="result"
+            class="result-container hidden"
+        ></section>
 
 
-            <div
-                id="letterButtons"
-                class="letter-buttons"
-                hidden
-            >
 
-                <a
-                    id="viewLetterBtn"
-                    class="letter-btn view-btn"
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    XEM GIẤY BÁO
-                </a>
+        <!-- ======================================
+             FOOTER
+        ======================================= -->
+
+        <footer>
+
+            Trường Đại học Y Dược – Đại học Quốc gia Hà Nội
+
+        </footer>
 
 
-                <a
-                    id="downloadLetterBtn"
-                    class="letter-btn download-btn"
-                    href="#"
-                >
-                    TẢI GIẤY BÁO
-                </a>
-
-            </div>
-
-        </div>
+    </main>
 
 
-    </section>
+    <!-- JAVASCRIPT -->
 
+    <script
+        src="script.js"
+    ></script>
 
-    <!-- FOOTER -->
-
-    <footer>
-
-        Trường Đại học Y Dược – Đại học Quốc gia Hà Nội
-
-    </footer>
-
-
-</main>
-
-
-</div>
-
-
-<script src="script.js"></script>
 
 </body>
 
